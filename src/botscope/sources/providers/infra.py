@@ -55,7 +55,7 @@ class CloudflareEdgeIpsSource(DataSource):
                 authentication=self.authentication,
                 cached=receipt.from_cache,
             )
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             return AvailabilityReport(
                 source_id=self.source_id,
                 status=SourceStatus.UNAVAILABLE,
@@ -147,7 +147,7 @@ class AwsIpRangesSource(DataSource):
                 authentication=self.authentication,
                 cached=receipt.from_cache,
             )
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             return AvailabilityReport(
                 source_id=self.source_id,
                 status=SourceStatus.UNAVAILABLE,

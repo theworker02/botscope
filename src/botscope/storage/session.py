@@ -4,15 +4,15 @@ from __future__ import annotations
 
 import json
 import sqlite3
+from collections.abc import Iterable, Iterator
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Iterable, Iterator
+from typing import Any
 from uuid import uuid4
 
 from botscope.__version__ import __version__
 from botscope.normalize.event import NormalizedEvent
-
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS sessions (

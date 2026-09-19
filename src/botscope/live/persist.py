@@ -6,9 +6,10 @@ Status: IMPLEMENTED — append-only events; debounced aggregates/report.
 from __future__ import annotations
 
 import time
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 from botscope.__version__ import __version__
 from botscope.classify.result import MODEL_VERSION, RULESET_VERSION

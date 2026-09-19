@@ -6,10 +6,11 @@ Status: IMPLEMENTED
 from __future__ import annotations
 
 from collections import Counter
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 from botscope.normalize.event import NormalizedEvent
 from botscope.storage.session import SessionStore

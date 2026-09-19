@@ -8,9 +8,10 @@ user-selected local interface with an optional BPF filter.
 from __future__ import annotations
 
 import time
+from collections.abc import Callable, Iterator
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Callable, Iterator
+from typing import Any
 
 from botscope.capture.core import CapturePlan, capture_status, scapy_available
 from botscope.normalize.event import NormalizedEvent, SourceType
@@ -46,7 +47,7 @@ def list_interfaces() -> list[dict[str, Any]]:
         from scapy.all import get_if_list  # type: ignore
 
         return [{"name": name} for name in get_if_list()]
-    except Exception:  # noqa: BLE001
+    except Exception:
         return []
 
 

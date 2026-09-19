@@ -11,9 +11,10 @@ remains prohibited.
 from __future__ import annotations
 
 import math
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
-from typing import Any, Iterable
+from typing import Any
 
 from botscope.sources.base import NormalizedSourceObservation, ObservationKind
 from botscope.sources.federation import FederationSnapshot
@@ -72,7 +73,7 @@ def _share_observations(
         o
         for o in observations
         if o.metric_name in {"likely_automated_share", "automated_share"}
-        and isinstance(o.metric_value, (int, float))
+        and isinstance(o.metric_value, int | float)
     ]
 
 

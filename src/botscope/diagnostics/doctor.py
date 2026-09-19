@@ -137,7 +137,7 @@ def run_doctor() -> list[CheckResult]:
                 range_status,
             )
         )
-    except Exception as exc:  # noqa: BLE001
+    except Exception as exc:
         checks.append(
             CheckResult(
                 "identity_published_ranges",

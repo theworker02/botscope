@@ -6,8 +6,8 @@ helpers quantify that gap when labeled evaluation fixtures are available.
 
 from __future__ import annotations
 
+from collections.abc import Iterable, Sequence
 from dataclasses import dataclass, field
-from typing import Iterable, Sequence
 
 
 @dataclass(frozen=True)
@@ -63,7 +63,7 @@ def brier_score(confidences: Sequence[float], correct: Sequence[bool]) -> float:
     if not confidences:
         return 0.0
     total = 0.0
-    for c, y in zip(confidences, correct):
+    for c, y in zip(confidences, correct, strict=False):
         outcome = 1.0 if y else 0.0
         total += (float(c) - outcome) ** 2
     return total / len(confidences)
@@ -81,7 +81,7 @@ def reliability_diagram(
     if n_bins < 1:
         raise ValueError("n_bins must be >= 1")
     bins: list[list[tuple[float, bool]]] = [[] for _ in range(n_bins)]
-    for c, y in zip(confidences, correct):
+    for c, y in zip(confidences, correct, strict=False):
         conf = min(max(float(c), 0.0), 1.0)
         idx = min(int(conf * n_bins), n_bins - 1)
         bins[idx].append((conf, y))

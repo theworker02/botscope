@@ -6,10 +6,11 @@ Status: IMPLEMENTED — local measurement alerts only (not Intrusion Detection).
 from __future__ import annotations
 
 from collections import deque
+from collections.abc import Sequence
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from enum import Enum
-from typing import Any, Deque, Sequence
+from typing import Any
 
 from botscope.live.aggregator import ObservatorySnapshot
 
@@ -106,7 +107,7 @@ class AlertEngine:
     """Evaluate rules against a rolling window of snapshots."""
 
     rules: list[AlertRule] = field(default_factory=list)
-    _history: Deque[tuple[float, ObservatorySnapshot]] = field(
+    _history: deque[tuple[float, ObservatorySnapshot]] = field(
         default_factory=deque, init=False
     )
     _fired: set[str] = field(default_factory=set, init=False)

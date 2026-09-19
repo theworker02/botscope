@@ -5,9 +5,10 @@ from __future__ import annotations
 import json
 import re
 from abc import ABC, abstractmethod
+from collections.abc import Iterator
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Iterator
+from typing import ClassVar
 
 from botscope.normalize.event import NormalizedEvent, SourceType
 
@@ -94,7 +95,7 @@ class JsonLogParser(BaseParser):
 
     source_type = SourceType.WEB_LOG
 
-    FIELD_MAP = {
+    FIELD_MAP: ClassVar[dict[str, str]] = {
         "remote_addr": "src_address",
         "client_ip": "src_address",
         "ip": "src_address",

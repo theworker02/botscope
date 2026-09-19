@@ -8,9 +8,10 @@ Each dimension is scored and reported separately with explicit rationale.
 
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
-from typing import Any, Iterable
+from typing import Any
 
 from botscope.normalize.event import NormalizedEvent
 

@@ -3,16 +3,7 @@
 Status: PARTIAL
 """
 
-from __future__ import annotations
-
-from collections import Counter
-from dataclasses import dataclass
-from typing import Any, Iterable
-
-from botscope.normalize.event import NormalizedEvent
-
-
-@dataclass
+from __future__ import annotationsfrom collections import Counterfrom collections.abc import Iterablefrom dataclasses import dataclassfrom typing import Anyfrom botscope.normalize.event import NormalizedEvent@dataclass
 class FlowRecord:
     src_address: str | None
     dst_address: str | None

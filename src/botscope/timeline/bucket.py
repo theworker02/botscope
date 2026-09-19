@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 from enum import Enum
-from typing import Iterable
 
 from botscope.classify.taxonomy import AUTOMATION_CATEGORIES, BotCategory
 from botscope.normalize.event import NormalizedEvent

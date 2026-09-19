@@ -3,7 +3,5 @@
 Status: IMPLEMENTED
 """
 
-from botscope.cli.main import main
-
-__all__ = ["main"]
+from botscope.cli.main import main__all__ = ["main"]
 

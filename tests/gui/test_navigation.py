@@ -3,8 +3,8 @@
 from __future__ import annotations
 
 from botscope.gui.navigation import (
-    PRIMARY_PAGES,
     PAGE_BY_ID,
+    PRIMARY_PAGES,
     page_index,
     resolve_page_id,
 )

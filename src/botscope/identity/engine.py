@@ -141,8 +141,7 @@ class IdentityEngine:
                 claimed_name=claim.name,
                 status=IdentityStatus.MISMATCH,
                 confidence=0.2,
-                evidence=evidence
-                + ["Result: UNVERIFIED CLAIM / MISMATCH — do not treat as verified"],
+                evidence=[*evidence, "Result: UNVERIFIED CLAIM / MISMATCH — do not treat as verified"],
                 signature=claim,
             )
 
@@ -151,11 +150,7 @@ class IdentityEngine:
                 claimed_name=claim.name,
                 status=IdentityStatus.UNVERIFIED_CLAIM,
                 confidence=0.35,
-                evidence=evidence
-                + [
-                    "User-Agent alone does not establish verified identity",
-                    "Result: UNVERIFIED CLAIM",
-                ],
+                evidence=[*evidence, "User-Agent alone does not establish verified identity", "Result: UNVERIFIED CLAIM"],
                 signature=claim,
             )
 
@@ -164,7 +159,7 @@ class IdentityEngine:
                 claimed_name=claim.name,
                 status=IdentityStatus.VERIFIED,
                 confidence=min(0.95, 0.6 + 0.1 * checks_passed),
-                evidence=evidence + ["Result: VERIFIED with corroborating signals"],
+                evidence=[*evidence, "Result: VERIFIED with corroborating signals"],
                 signature=claim,
             )
 
@@ -172,7 +167,7 @@ class IdentityEngine:
             claimed_name=claim.name,
             status=IdentityStatus.INSUFFICIENT_EVIDENCE,
             confidence=0.4,
-            evidence=evidence + ["Mixed signals — insufficient for verification"],
+            evidence=[*evidence, "Mixed signals — insufficient for verification"],
             signature=claim,
         )
 

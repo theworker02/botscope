@@ -19,7 +19,6 @@ from botscope.gui.main_window import ObservatoryWindow
 from botscope.gui.session_state import GuiSession
 from botscope.gui.theme import STYLESHEET
 from botscope.live import StreamingAggregator
-from botscope.normalize.event import NormalizedEvent
 
 
 @pytest.fixture(scope="module")

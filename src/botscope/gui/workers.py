@@ -66,7 +66,7 @@ class AnalyzeWorker(QThread):
                 self.progress.emit(detail)
             self.progress.emit("Aggregating observatory statistics…")
             self.finished_ok.emit(result)
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             self.failed.emit(str(exc))
 
 
@@ -170,7 +170,7 @@ class LiveLogTailWorker(QThread):
             final = aggregator.snapshot(is_live=False)
             self.snapshot_ready.emit(final)
             self.status.emit("Live tail stopped.")
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             self.failed.emit(str(exc))
 
 
@@ -266,5 +266,5 @@ class LivePacketCaptureWorker(QThread):
             final = aggregator.snapshot(is_live=False)
             self.snapshot_ready.emit(final)
             self.status.emit("Live packet capture stopped.")
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             self.failed.emit(str(exc))

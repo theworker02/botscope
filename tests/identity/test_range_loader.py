@@ -13,7 +13,6 @@ from botscope.identity import (
 )
 from botscope.normalize.event import NormalizedEvent
 
-
 GOOGLE_DOC = {
     "creationTime": "2026-09-18T00:00:00.000000",
     "prefixes": [{"ipv4Prefix": "66.249.64.0/24"}],

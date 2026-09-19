@@ -3,19 +3,7 @@
 Status: EXPERIMENTAL — not a Jupyter replacement.
 """
 
-from __future__ import annotations
-
-import json
-from dataclasses import dataclass, field
-from datetime import datetime, timezone
-from pathlib import Path
-from typing import Any, Callable
-
-from botscope.normalize.event import NormalizedEvent
-from botscope.query import filter_events, parse_simple_query
-
-
-@dataclass
+from __future__ import annotationsimport jsonfrom collections.abc import Callablefrom dataclasses import dataclass, fieldfrom datetime import datetime, timezonefrom pathlib import Pathfrom typing import Anyfrom botscope.normalize.event import NormalizedEventfrom botscope.query import filter_events, parse_simple_query@dataclass
 class NotebookCell:
     title: str
     kind: str  # markdown | filter | stats | custom

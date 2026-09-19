@@ -68,7 +68,7 @@ class PublishedCidrSource(DataSource):
             )
             self._last_receipt = receipt
             data = json.loads(body)
-            prefixes = data.get("prefixes") or data.get("creationTime") and data.get("prefixes") or []
+            prefixes = data.get("prefixes") or (data.get("creationTime") and data.get("prefixes")) or []
             if isinstance(data, dict) and "prefixes" not in data:
                 # Some feeds nest differently — still report reachable
                 n = len(data) if isinstance(data, dict) else 0
@@ -87,7 +87,7 @@ class PublishedCidrSource(DataSource):
                 authentication=self.authentication,
                 cached=receipt.from_cache,
             )
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             return AvailabilityReport(
                 source_id=self.source_id,
                 status=SourceStatus.UNAVAILABLE,
@@ -188,7 +188,7 @@ class PublishedCidrSource(DataSource):
             try:
                 fetched = self.fetch()
                 self._networks = parse_prefix_list(fetched["payload"])
-            except Exception:  # noqa: BLE001
+            except Exception:
                 return False
         return ip_in_networks(address, self._networks)
 

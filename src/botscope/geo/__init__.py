@@ -17,11 +17,11 @@ from botscope.geo.aggregate import (
 from botscope.geo.table import GeoRecord, GeoTable, load_geo_table
 
 __all__ = [
+    "GEO_CAVEAT",
     "GeoAggregate",
     "GeoCaveat",
-    "GEO_CAVEAT",
-    "aggregate_geo",
     "GeoRecord",
     "GeoTable",
+    "aggregate_geo",
     "load_geo_table",
 ]

@@ -7,16 +7,16 @@ from __future__ import annotations
 
 import json
 import zipfile
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 from botscope.__version__ import __version__
 from botscope.normalize.event import NormalizedEvent
 from botscope.provenance.engine import claim_safe_totals, summarize_corpus
 from botscope.quality.scorecard import build_scorecard
-
 
 CITATION_TEXT = """\
 BotScope Contributors. ({year}). BotScope (Version {version}) [Computer software].

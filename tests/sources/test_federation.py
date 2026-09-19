@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import json
 from pathlib import Path
 
 import pytest
@@ -11,7 +10,6 @@ from botscope.estimation.internet import estimate_from_federation
 from botscope.sources.commoncrawl import CommonCrawlCatalogSource
 from botscope.sources.federation import FederationSnapshot, zero_auth_federation
 from botscope.sources.registry import REGISTRY, zero_auth_entries
-
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

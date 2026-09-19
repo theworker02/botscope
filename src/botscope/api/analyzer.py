@@ -4,9 +4,10 @@ from __future__ import annotations
 
 import hashlib
 import os
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 from botscope.__version__ import __version__
 from botscope.asn import AsnTable, load_asn_table
@@ -159,7 +160,7 @@ class Analyzer:
         is_demo: bool = False,
         max_events: int | None = None,
     ) -> AnalysisResult:
-        if isinstance(source, (str, Path)):
+        if isinstance(source, str | Path):
             source_path = Path(source)
             source_hash = _file_hash(source_path)
             raw_events = iter_events(source_path)

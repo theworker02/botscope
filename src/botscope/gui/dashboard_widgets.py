@@ -68,7 +68,7 @@ class KpiCard(QFrame):
         if changed:
             pulse_opacity(self.value, duration_ms=160)
 
-    def mousePressEvent(self, event) -> None:  # noqa: N802
+    def mousePressEvent(self, event) -> None:
         self.clicked.emit(self.key)
         super().mousePressEvent(event)
 
@@ -116,7 +116,7 @@ class ShareRing(QWidget):
                 animate_float(self, b"progress", 1.0, start=0.0, duration_ms=480)
         self.update()
 
-    def paintEvent(self, event) -> None:  # noqa: N802
+    def paintEvent(self, event) -> None:
         colors = chart_colors()
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
@@ -188,7 +188,7 @@ class ShareRing(QWidget):
         )
         painter.end()
 
-    def mousePressEvent(self, event) -> None:  # noqa: N802
+    def mousePressEvent(self, event) -> None:
         cx, cy = self.width() / 2, self.height() / 2
         dx, dy = event.position().x() - cx, event.position().y() - cy
         if abs(dx) > abs(dy):

@@ -58,7 +58,7 @@ class SourceConstellation(QWidget):
         self._nodes = list(nodes)
         self.update()
 
-    def paintEvent(self, event) -> None:  # noqa: N802
+    def paintEvent(self, event) -> None:
         colors = chart_colors()
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
@@ -100,7 +100,7 @@ class SourceConstellation(QWidget):
             "UNAVAILABLE": colors.get("danger", "#9b2c2c"),
             "ERROR": colors.get("danger", "#9b2c2c"),
         }
-        for i, (sid, label, status) in enumerate(self._nodes):
+        for i, (_sid, label, status) in enumerate(self._nodes):
             angle = (2 * math.pi * i / n) - math.pi / 2
             x = cx + radius * math.cos(angle)
             y = cy + radius * math.sin(angle)
@@ -115,7 +115,7 @@ class SourceConstellation(QWidget):
             painter.drawText(int(x - 48), int(y + 22), 96, 16, Qt.AlignmentFlag.AlignCenter, short)
         painter.end()
 
-    def mousePressEvent(self, event) -> None:  # noqa: N802
+    def mousePressEvent(self, event) -> None:
         if not self._nodes:
             return
         cx, cy = self.width() / 2, self.height() / 2
@@ -154,7 +154,7 @@ class ActorOrbit(QWidget):
         self._actors = list(actors[:10])
         self.update()
 
-    def paintEvent(self, event) -> None:  # noqa: N802
+    def paintEvent(self, event) -> None:
         colors = chart_colors()
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
@@ -186,7 +186,7 @@ class ActorOrbit(QWidget):
             )
         painter.end()
 
-    def mousePressEvent(self, event) -> None:  # noqa: N802
+    def mousePressEvent(self, event) -> None:
         if not self._actors:
             return
         cx, cy = self.width() / 2, self.height() / 2

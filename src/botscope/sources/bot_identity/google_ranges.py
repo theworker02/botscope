@@ -72,7 +72,7 @@ class GoogleCrawlerRangesSource(DataSource):
                 authentication=self.authentication,
                 cached=receipt.from_cache,
             )
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             return AvailabilityReport(
                 source_id=self.source_id,
                 status=SourceStatus.UNAVAILABLE,
@@ -117,7 +117,7 @@ class GoogleCrawlerRangesSource(DataSource):
         if which in {"special", "both"}:
             try:
                 parts["special"] = self._fetch_one(SPECIAL_URL, force=force)
-            except Exception as exc:  # noqa: BLE001
+            except Exception as exc:
                 if which == "special":
                     raise
                 parts["special_error"] = str(exc)
@@ -218,6 +218,6 @@ class GoogleCrawlerRangesSource(DataSource):
         if not self._networks:
             try:
                 self.fetch()
-            except Exception:  # noqa: BLE001
+            except Exception:
                 return False
         return ip_in_networks(address, self._networks)

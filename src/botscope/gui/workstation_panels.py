@@ -120,7 +120,7 @@ class ComparePanel(QWidget):
             return
         try:
             report = compare_sessions(left, right)
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             QMessageBox.critical(self, "Compare failed", str(exc))
             return
         self.table.setHorizontalHeaderLabels(["Category", "Left", "Right", "Δ"])
@@ -390,7 +390,7 @@ class ExportPanel(QWidget):
                 formats=formats,
                 is_demo=self._session.is_demo,
             )
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             QMessageBox.critical(self, "Export failed", str(exc))
             return
         lines = [f"Wrote {len(job.artifacts)} artifact(s):"]
@@ -402,7 +402,7 @@ class ExportPanel(QWidget):
                 lines.append("Snapshot:")
                 for p in snap_paths:
                     lines.append(f"  · {p}")
-            except Exception as exc:  # noqa: BLE001
+            except Exception as exc:
                 lines.append(f"Snapshot failed: {exc}")
         self.log.setPlainText("\n".join(lines))
 
@@ -429,7 +429,7 @@ class ExportPanel(QWidget):
         anomalies = detect_anomalies(events, denominator=den)
         try:
             quality = build_scorecard(events).to_dict()
-        except Exception:  # noqa: BLE001
+        except Exception:
             quality = {}
         payload = {
             "generated_at": datetime.now(timezone.utc).isoformat(),

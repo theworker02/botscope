@@ -35,7 +35,7 @@ class _CollectWorker(QThread):
         try:
             snap = self._fed.collect(probe_health=True)
             self.finished_ok.emit(snap)
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             self.failed.emit(str(exc))
 
 
@@ -143,7 +143,7 @@ class GlobalObservatoryPanel(QWidget):
             self._auto_refreshed = True
             self.refresh_sources()
 
-    def showEvent(self, event) -> None:  # noqa: N802
+    def showEvent(self, event) -> None:
         super().showEvent(event)
         self.ensure_loaded()
 
@@ -183,7 +183,7 @@ class GlobalObservatoryPanel(QWidget):
         meta = {}
         try:
             meta = src.metadata() if hasattr(src, "metadata") else {}
-        except Exception:  # noqa: BLE001
+        except Exception:
             meta = {}
         auth = src.authentication.value
         msg = [

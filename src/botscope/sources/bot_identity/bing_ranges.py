@@ -63,7 +63,7 @@ class BingbotRangesSource(DataSource):
                 authentication=self.authentication,
                 cached=receipt.from_cache,
             )
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             return AvailabilityReport(
                 source_id=self.source_id,
                 status=SourceStatus.UNAVAILABLE,
@@ -142,6 +142,6 @@ class BingbotRangesSource(DataSource):
             try:
                 fetched = self.fetch()
                 self._networks = parse_prefix_list(fetched["payload"])
-            except Exception:  # noqa: BLE001
+            except Exception:
                 return False
         return ip_in_networks(address, self._networks)

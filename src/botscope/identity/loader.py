@@ -77,7 +77,7 @@ def load_published_range_index(
             status["sources"]["google_special"] = len(nets)
         if raw.get("special_error"):
             status["errors"]["google_special"] = str(raw["special_error"])
-    except Exception as exc:  # noqa: BLE001
+    except Exception as exc:
         status["errors"]["google"] = str(exc)
 
     # Bingbot
@@ -90,7 +90,7 @@ def load_published_range_index(
             index.add("microsoft", nets)
             index.add("bing", nets)
             status["sources"]["bing"] = len(nets)
-    except Exception as exc:  # noqa: BLE001
+    except Exception as exc:
         status["errors"]["bing"] = str(exc)
 
     status["prefix_count"] = len(index)

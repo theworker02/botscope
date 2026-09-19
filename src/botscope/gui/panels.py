@@ -63,7 +63,7 @@ class _ClickFilter(QObject):
         super().__init__()
         self._callback = callback
 
-    def eventFilter(self, obj, event) -> bool:  # noqa: N802
+    def eventFilter(self, obj, event) -> bool:
         if event.type() == QEvent.Type.MouseButtonPress:
             self._callback()
             return True
@@ -387,7 +387,7 @@ class ObservatoryPanel(QWidget):
                 )
             else:
                 self.tile_quality.set_value("—", "INFERRED")
-        except Exception:  # noqa: BLE001
+        except Exception:
             self.tile_quality.set_value("—", "INFERRED")
 
         timestamps = [e.timestamp for e in events if e.timestamp]
@@ -420,7 +420,7 @@ class ObservatoryPanel(QWidget):
 
         try:
             self.anomalies.set_findings(detect_anomalies(events, denominator=den))
-        except Exception:  # noqa: BLE001
+        except Exception:
             self.anomalies.set_findings([])
 
         self._refresh_breakdown_only()
@@ -721,7 +721,7 @@ class QualityPanel(QWidget):
             lines.append("• Moderate support for classification review.")
         else:
             lines.append("• Weak for bot attribution — identity signals limited.")
-        lines.extend([""] + card.notes)
+        lines.extend(["", *card.notes])
         self.interpretation.setPlainText("\n".join(lines))
 
 

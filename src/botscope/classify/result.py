@@ -7,7 +7,6 @@ from typing import Any
 
 from botscope.classify.taxonomy import BotCategory
 
-
 RULESET_VERSION = "2.0.0"
 MODEL_VERSION = "rules-ml-2.0.0"
 

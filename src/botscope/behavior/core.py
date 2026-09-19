@@ -7,11 +7,12 @@ from __future__ import annotations
 
 import math
 from collections import Counter, defaultdict
+from collections.abc import Iterable
 from dataclasses import dataclass
 from statistics import mean, pstdev
-from typing import Any, Iterable
+from typing import Any
 
-from botscope.classify.taxonomy import AUTOMATION_CATEGORIES, BotCategory
+from botscope.classify.taxonomy import AUTOMATION_CATEGORIES
 from botscope.normalize.event import NormalizedEvent
 
 

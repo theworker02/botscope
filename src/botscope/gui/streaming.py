@@ -13,8 +13,8 @@ from botscope.normalize.event import NormalizedEvent
 
 __all__ = [
     "ObservatorySnapshot",
-    "StreamingAggregator",
     "SnapshotPublisher",
+    "StreamingAggregator",
 ]
 
 

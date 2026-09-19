@@ -32,14 +32,14 @@ class _ProbeWorker(QThread):
     finished_ok = Signal(object)
     failed = Signal(str)
 
-    def run(self) -> None:  # noqa: D401
+    def run(self) -> None:
         try:
             from botscope.sources.federation import zero_auth_federation
 
             fed = zero_auth_federation()
             board = fed.health()
             self.finished_ok.emit(board)
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             self.failed.emit(str(exc))
 
 
@@ -179,7 +179,7 @@ class SourcesRegistryPanel(QWidget):
             f"{board.zero_auth_total}. Mode: {board.mode}."
         )
 
-    def showEvent(self, event) -> None:  # noqa: N802
+    def showEvent(self, event) -> None:
         super().showEvent(event)
         if not getattr(self, "_auto_probed", False):
             self._auto_probed = True

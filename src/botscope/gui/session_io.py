@@ -10,11 +10,10 @@ from __future__ import annotations
 import hashlib
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
 
+from botscope.__version__ import __version__
 from botscope.api.analyzer import AnalysisResult
 from botscope.classify.result import MODEL_VERSION, RULESET_VERSION
-from botscope.__version__ import __version__
 from botscope.history import SessionHistory
 from botscope.native import native_status
 from botscope.normalize.event import NormalizedEvent
@@ -69,7 +68,7 @@ def save_analysis_session(
     if sig_ver is None:
         try:
             sig_ver = SignatureStore.load_bundled().VERSION
-        except Exception:  # noqa: BLE001
+        except Exception:
             sig_ver = None
 
     store = SessionStore(target)

@@ -8,9 +8,9 @@ Authorized offline analysis only. Does not open live sockets.
 from __future__ import annotations
 
 import struct
+from collections.abc import Iterator
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Iterator
 
 from botscope.normalize.event import NormalizedEvent, SourceType
 

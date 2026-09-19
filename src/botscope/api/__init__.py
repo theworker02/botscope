@@ -10,9 +10,9 @@ from botscope.query import (
 )
 
 __all__ = [
+    "ALLOWED_FIELDS",
     "AnalysisResult",
     "Analyzer",
-    "ALLOWED_FIELDS",
     "Predicate",
     "QueryError",
     "filter_events",

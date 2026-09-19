@@ -4,10 +4,11 @@ from __future__ import annotations
 
 import csv
 import json
+from collections.abc import Iterator
 from dataclasses import dataclass
 from ipaddress import ip_address, ip_network
 from pathlib import Path
-from typing import Any, Iterator
+from typing import Any
 
 
 @dataclass(frozen=True)

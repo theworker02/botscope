@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
-from typing import Any, Iterable
+from typing import Any
 
 from botscope.sources.base import (
     DataSource,
@@ -109,7 +109,7 @@ class SourceFederation:
                 observations.extend(src.normalize(raw))
             except PermissionError as exc:
                 errors[source_id] = str(exc)
-            except Exception as exc:  # noqa: BLE001
+            except Exception as exc:
                 errors[source_id] = f"SOURCE UNAVAILABLE: {exc}"
         health = self.health() if probe_health else None
         return FederationSnapshot(

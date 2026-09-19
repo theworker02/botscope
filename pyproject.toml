@@ -119,12 +119,25 @@ markers = [
 ]
 
 [tool.ruff]
-line-length = 100
+line-length = 120
 target-version = "py310"
 src = ["src", "tests", "benchmarks"]
+extend-exclude = [
+  "scripts/_fill_empty.py",
+  "scripts/_gen_thickness.py",
+]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP", "RUF"]
+ignore = [
+  "E501",  # many descriptive strings; enforce via review instead of CI noise
+  "RUF001",  # intentional Unicode in UI strings
+  "RUF002",
+  "RUF003",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"src/botscope/ux/secure_store.py" = ["RUF012"]
 
 [tool.mypy]
 python_version = "3.10"

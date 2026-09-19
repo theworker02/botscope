@@ -3,11 +3,11 @@
 from __future__ import annotations
 
 import csv
-import io
 import json
+from collections.abc import Iterable
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 from botscope.__version__ import __version__
 from botscope.normalize.event import NormalizedEvent, ProvenanceLevel

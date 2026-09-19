@@ -10,7 +10,6 @@ from botscope.sources.bot_identity.cidr_util import ip_in_networks, parse_prefix
 from botscope.sources.federation import zero_auth_federation
 from botscope.sources.registry import zero_auth_entries
 
-
 SAMPLE = {
     "creationTime": "2026-09-18T00:00:00.000000",
     "prefixes": [

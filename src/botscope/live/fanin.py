@@ -5,9 +5,10 @@ Status: IMPLEMENTED — local sensors only (log / pcap / iface), not Global fede
 
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Any, Iterable
+from typing import Any
 
 from botscope.live.aggregator import ObservatorySnapshot, StreamingAggregator
 from botscope.normalize.event import NormalizedEvent

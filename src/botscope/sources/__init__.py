@@ -34,9 +34,10 @@ from botscope.sources.health import SourceHealthBoard, probe_sources
 from botscope.sources.registry import REGISTRY, get_entry, registry_as_dicts
 
 __all__ = [
+    "CAPABILITIES",
+    "REGISTRY",
     "AuthenticationMode",
     "AvailabilityReport",
-    "CAPABILITIES",
     "Cadence",
     "DataSource",
     "EvidenceSufficiency",
@@ -44,7 +45,6 @@ __all__ = [
     "MeasurementType",
     "NormalizedSourceObservation",
     "ObservationKind",
-    "REGISTRY",
     "SourceCapability",
     "SourceFederation",
     "SourceHealthBoard",

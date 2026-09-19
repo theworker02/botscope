@@ -9,10 +9,11 @@ Provides field-level provenance tracking, session inspection, and audit trails.
 from __future__ import annotations
 
 from collections import Counter
+from collections.abc import Iterable, Iterator
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from enum import Enum
-from typing import Any, Iterable, Iterator
+from typing import Any
 
 from botscope.normalize.event import NormalizedEvent, ProvenanceLevel
 

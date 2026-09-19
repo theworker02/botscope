@@ -72,7 +72,7 @@ class CommonCrawlCatalogSource(DataSource):
                 authentication=self.authentication,
                 cached=receipt.from_cache,
             )
-        except Exception as exc:  # noqa: BLE001 — surface as UNAVAILABLE
+        except Exception as exc:
             # Try stale cache body if present via force=False path failure
             return AvailabilityReport(
                 source_id=self.source_id,

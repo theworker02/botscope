@@ -8,8 +8,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import pytest
-
 # Frozen 2026-09-18 after Observatory shell + 20 passing tests.
 FROZEN_PASSING_COUNT = 20
 BASELINE_DOC = Path(__file__).resolve().parents[1] / "docs" / "development" / "REGRESSION_BASELINE.md"

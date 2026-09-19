@@ -3,15 +3,15 @@
 from __future__ import annotations
 
 from collections import Counter
+from collections.abc import Iterable
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Iterable
+from typing import Any
 
 from botscope.classify.taxonomy import AUTOMATION_CATEGORIES, BotCategory
 from botscope.normalize.event import NormalizedEvent
 from botscope.signatures.store import SignatureStore
 from botscope.statistics.aggregate import ObservatoryStats, aggregate_events
-
 
 CONFIDENCE_BUCKETS = (
     ("Very high", 0.85, 1.01),
@@ -64,7 +64,7 @@ def composition_from_stats(
     auto_cats = {c.value for c in AUTOMATION_CATEGORIES}
     auto_n = sum(v for k, v in cats.items() if k in auto_cats)
     human_n = cats.get(BotCategory.HUMAN_LIKELY.value, 0)
-    unknown_n = cats.get(BotCategory.UNKNOWN.value, 0) + cats.get(
+    cats.get(BotCategory.UNKNOWN.value, 0) + cats.get(
         BotCategory.UNKNOWN_AUTOMATION.value, 0
     )
     # Unknown automation counted in automated for share tiles; keep UA separate for unknown %

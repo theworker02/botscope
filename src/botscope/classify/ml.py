@@ -189,7 +189,7 @@ class MlModel:
 
                 backend = joblib.load(path)
                 return cls(model_id=path.stem, path=path, backend=backend)
-            except Exception:  # noqa: BLE001
+            except Exception:
                 pass
         return cls()
 
@@ -251,7 +251,7 @@ class MlModel:
                     score = float(proba[idx])
                     probs = {
                         str(c): float(p)
-                        for c, p in zip(self._backend.classes_, proba)
+                        for c, p in zip(self._backend.classes_, proba, strict=False)
                     }
                 else:
                     label = str(self._backend.predict(vec)[0])
@@ -264,7 +264,7 @@ class MlModel:
                     model_id=self.model_id,
                     probabilities=probs,
                 )
-            except Exception:  # noqa: BLE001
+            except Exception:
                 pass
         return self._predict_logistic(feats)
 

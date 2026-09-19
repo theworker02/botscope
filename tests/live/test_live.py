@@ -41,7 +41,7 @@ def test_streaming_aggregator_snapshot_rates() -> None:
 def test_tail_new_lines(tmp_path: Path) -> None:
     log = tmp_path / "access.log"
     log.write_text("line-a\n", encoding="utf-8")
-    config = LogTailConfig(path=log, poll_interval_s=0.05, start_at_end=True)
+    LogTailConfig(path=log, poll_interval_s=0.05, start_at_end=True)
     # Append after opening would be ideal; start_at_end means we only see new lines.
     # Write more then read with stop_after.
     log.write_text("line-a\nline-b\n", encoding="utf-8")

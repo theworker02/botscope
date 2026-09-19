@@ -3,13 +3,13 @@
 from __future__ import annotations
 
 from collections import Counter, defaultdict
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import Iterable, Literal
+from typing import Literal
 
 from botscope.classify.taxonomy import AUTOMATION_CATEGORIES, BotCategory
 from botscope.normalize.event import NormalizedEvent, ProvenanceLevel
-
 
 Denominator = Literal["requests", "bytes", "connections"]
 

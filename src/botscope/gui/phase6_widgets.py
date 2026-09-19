@@ -11,7 +11,6 @@ from PySide6.QtWidgets import (
     QListWidget,
     QListWidgetItem,
     QMenu,
-    QPlainTextEdit,
     QPushButton,
     QToolButton,
     QVBoxLayout,

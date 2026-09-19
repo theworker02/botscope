@@ -10,6 +10,8 @@ from typing import Any
 
 from botscope.estimation.internet import (
     InternetEstimate,
+)
+from botscope.estimation.internet import (
     internet_wide_estimate as _internet_wide_estimate,
 )
 

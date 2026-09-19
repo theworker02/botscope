@@ -3,13 +3,12 @@
 from __future__ import annotations
 
 from collections import Counter
+from collections.abc import Iterable
 from dataclasses import dataclass
-from typing import Iterable
 
 from botscope.classify.taxonomy import AUTOMATION_CATEGORIES
 from botscope.normalize.event import NormalizedEvent
 from botscope.signatures.store import SignatureStore
-
 
 SUPPORTED_DIMENSIONS = (
     "classification",

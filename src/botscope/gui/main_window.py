@@ -30,6 +30,7 @@ from botscope.__version__ import __version__
 from botscope.api.analyzer import AnalysisResult
 from botscope.demo import DEMO_NOTICE, ensure_demo_log
 from botscope.gui.global_observatory import GlobalObservatoryPanel
+from botscope.gui.motion import fade_in, set_reduce_motion
 from botscope.gui.navigation import PRIMARY_PAGES, page_index, resolve_page_id
 from botscope.gui.panels import (
     BotLibraryPanel,
@@ -39,19 +40,17 @@ from botscope.gui.panels import (
     ProvenancePanel,
     QualityPanel,
 )
-from botscope.gui.settings_panel import SettingsPanel
-from botscope.gui.sources_panel import SourcesRegistryPanel
 from botscope.gui.session_io import (
     load_analysis_session,
     save_analysis_session,
     suggest_session_name,
 )
 from botscope.gui.session_state import GuiSession
+from botscope.gui.settings_panel import SettingsPanel
+from botscope.gui.sources_panel import SourcesRegistryPanel
 from botscope.gui.theme import set_chart_theme, stylesheet_for
-from botscope.gui.motion import fade_in, set_reduce_motion, stagger_fade
 from botscope.gui.welcome import WelcomeAction, WelcomeDialog
 from botscope.gui.workers import AnalyzeWorker, LiveLogTailWorker, LivePacketCaptureWorker
-from botscope.workspace import TimeRange
 from botscope.gui.workstation_panels import (
     AnnotationsPanel,
     ClassifierComparePanel,
@@ -71,6 +70,7 @@ from botscope.ux import (
     classify_path,
     load_settings,
 )
+from botscope.workspace import TimeRange
 
 
 class ObservatoryWindow(QMainWindow):
@@ -760,7 +760,7 @@ class ObservatoryWindow(QMainWindow):
     def _open_session_path(self, path: str) -> None:
         try:
             loaded = load_analysis_session(path, remember=True)
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             QMessageBox.critical(self, "Failed to open session", str(exc))
             return
         self.session.source_path = Path(loaded.meta.source_path) if loaded.meta and loaded.meta.source_path else Path(path)
@@ -809,7 +809,7 @@ class ObservatoryWindow(QMainWindow):
                 workspace=self.session.to_workspace(),
                 remember=True,
             )
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             QMessageBox.critical(self, "Save failed", str(exc))
             return
         self.session.session_path = loaded.path
@@ -1193,13 +1193,13 @@ class ObservatoryWindow(QMainWindow):
         self.status_label.setText("Settings applied (local only)")
         fade_in(self.settings_panel, duration_ms=160)
 
-    def dragEnterEvent(self, event) -> None:  # noqa: N802
+    def dragEnterEvent(self, event) -> None:
         if event.mimeData().hasUrls():
             event.acceptProposedAction()
         else:
             event.ignore()
 
-    def dropEvent(self, event) -> None:  # noqa: N802
+    def dropEvent(self, event) -> None:
         urls = event.mimeData().urls()
         if not urls:
             return
@@ -1220,7 +1220,7 @@ class ObservatoryWindow(QMainWindow):
                 "Drop a web log, PCAP, or .bscope session folder.",
             )
 
-    def closeEvent(self, event) -> None:  # noqa: N802
+    def closeEvent(self, event) -> None:
         self.stop_live_tail()
         try:
             sizes = self._nav_splitter.sizes()
@@ -1230,6 +1230,6 @@ class ObservatoryWindow(QMainWindow):
             from botscope.ux import save_settings
 
             save_settings(self.settings)
-        except Exception:  # noqa: BLE001
+        except Exception:
             pass
         super().closeEvent(event)

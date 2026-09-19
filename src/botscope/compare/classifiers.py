@@ -6,9 +6,10 @@ Status: IMPLEMENTED
 from __future__ import annotations
 
 from collections import Counter
+from collections.abc import Callable, Iterable
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
-from typing import Any, Callable, Iterable
+from typing import Any
 
 from botscope.classify.engine import Classifier
 from botscope.classify.result import MODEL_VERSION, RULESET_VERSION

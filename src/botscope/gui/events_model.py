@@ -40,17 +40,17 @@ class EventsTableModel(QAbstractTableModel):
     def events(self) -> list[NormalizedEvent]:
         return self._events
 
-    def rowCount(self, parent: QModelIndex | None = None) -> int:  # noqa: N802
+    def rowCount(self, parent: QModelIndex | None = None) -> int:
         if parent is not None and parent.isValid():
             return 0
         return len(self._events)
 
-    def columnCount(self, parent: QModelIndex | None = None) -> int:  # noqa: N802
+    def columnCount(self, parent: QModelIndex | None = None) -> int:
         if parent is not None and parent.isValid():
             return 0
         return len(COLUMNS)
 
-    def headerData(  # noqa: N802
+    def headerData(
         self,
         section: int,
         orientation: Qt.Orientation,
@@ -62,7 +62,7 @@ class EventsTableModel(QAbstractTableModel):
             return COLUMNS[section][1]
         return None
 
-    def data(self, index: QModelIndex, role: int = Qt.ItemDataRole.DisplayRole) -> Any:  # noqa: N802
+    def data(self, index: QModelIndex, role: int = Qt.ItemDataRole.DisplayRole) -> Any:
         if not index.isValid() or not (0 <= index.row() < len(self._events)):
             return None
         event = self._events[index.row()]

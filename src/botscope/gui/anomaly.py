@@ -6,10 +6,9 @@ Uses timeline volume + composition share spikes and new identities.
 
 from __future__ import annotations
 
-from collections import Counter
+from collections.abc import Iterable
 from dataclasses import dataclass
 from datetime import datetime
-from typing import Iterable
 
 from botscope.classify.taxonomy import AUTOMATION_CATEGORIES
 from botscope.gui.dashboard_stats import composition_from_stats

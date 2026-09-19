@@ -90,7 +90,7 @@ class BrandMark(QWidget):
         self._size = size
         self.setFixedSize(size, size)
 
-    def paintEvent(self, event) -> None:  # noqa: N802
+    def paintEvent(self, event) -> None:
         colors = chart_colors()
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
@@ -136,7 +136,7 @@ class TimelineChart(QWidget):
         bar_w = max(2, (rect.width() - gap * max(0, n - 1)) / n)
         return rect, bar_w, gap
 
-    def paintEvent(self, event) -> None:  # noqa: N802
+    def paintEvent(self, event) -> None:
         colors = chart_colors()
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
@@ -204,7 +204,7 @@ class TimelineChart(QWidget):
         painter.drawText(rect.left() + 264, 13, "total · click a bar to inspect")
         painter.end()
 
-    def mousePressEvent(self, event) -> None:  # noqa: N802
+    def mousePressEvent(self, event) -> None:
         if not self._series:
             return
         rect, bar_w, gap = self._bar_geometry()
@@ -233,7 +233,7 @@ class CategoryBars(QWidget):
         self._items = sorted(items, key=lambda x: -x[1])[:12]
         self.update()
 
-    def paintEvent(self, event) -> None:  # noqa: N802
+    def paintEvent(self, event) -> None:
         colors = chart_colors()
         painter = QPainter(self)
         fill_paper(painter, self.rect())
@@ -254,7 +254,7 @@ class CategoryBars(QWidget):
             painter.drawText(bar_x + bar_w + 6, y + 14, f"{value:,}")
         painter.end()
 
-    def mousePressEvent(self, event) -> None:  # noqa: N802
+    def mousePressEvent(self, event) -> None:
         if not self._items:
             return
         row_h = max(18, self.height() // max(1, len(self._items)))

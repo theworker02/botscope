@@ -50,7 +50,7 @@ class _ThemeCard(QFrame):
             )
         layout.addWidget(preview)
 
-    def mousePressEvent(self, event) -> None:  # noqa: N802
+    def mousePressEvent(self, event) -> None:
         self.clicked.emit(self.theme_id)
         super().mousePressEvent(event)
 

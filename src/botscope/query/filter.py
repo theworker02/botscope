@@ -9,11 +9,11 @@ from __future__ import annotations
 
 import operator
 import re
+from collections.abc import Callable, Iterable, Iterator
 from dataclasses import dataclass
-from typing import Any, Callable, Iterable, Iterator
+from typing import Any
 
 from botscope.normalize.event import NormalizedEvent
-
 
 OPS: dict[str, Callable[[Any, Any], bool]] = {
     "eq": operator.eq,

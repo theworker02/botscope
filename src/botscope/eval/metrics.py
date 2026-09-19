@@ -3,8 +3,8 @@
 from __future__ import annotations
 
 from collections import Counter, defaultdict
-from dataclasses import dataclass, field
-from typing import Iterable, Sequence
+from collections.abc import Iterable, Sequence
+from dataclasses import dataclass
 
 
 @dataclass(frozen=True)
@@ -78,7 +78,7 @@ def evaluate_labels(
         raise ValueError("y_true and y_pred must have equal length")
     label_set = sorted(set(labels) if labels is not None else (set(y_true) | set(y_pred)))
     conf: dict[str, Counter[str]] = defaultdict(Counter)
-    for t, p in zip(y_true, y_pred):
+    for t, p in zip(y_true, y_pred, strict=False):
         conf[t][p] += 1
 
     per_class: list[ClassScore] = []
@@ -100,7 +100,7 @@ def evaluate_labels(
         total_fn += fn
 
     n = len(y_true)
-    accuracy = (sum(1 for t, p in zip(y_true, y_pred) if t == p) / n) if n else 0.0
+    accuracy = (sum(1 for t, p in zip(y_true, y_pred, strict=False) if t == p) / n) if n else 0.0
     micro_p, micro_r = precision_recall(total_tp, total_fp, total_fn)
     micro = f1_score(micro_p, micro_r)
     macro = sum(f1s) / len(f1s) if f1s else 0.0

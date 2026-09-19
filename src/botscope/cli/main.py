@@ -900,7 +900,7 @@ def batch_cmd(
                 "identity_ranges_prefixes": result.identity_ranges.get("prefix_count"),
                 "ok": True,
             }
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             row = {"source": str(source), "ok": False, "error": str(exc)}
         results.append(row)
         if not as_json:

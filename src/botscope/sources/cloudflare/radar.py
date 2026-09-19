@@ -95,7 +95,7 @@ class CloudflareRadarSource(DataSource):
                 http_status=exc.code,
                 authentication=self.authentication,
             )
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             return AvailabilityReport(
                 source_id=self.source_id,
                 status=SourceStatus.UNAVAILABLE,
@@ -232,8 +232,7 @@ class CloudflareRadarSource(DataSource):
                     population="Cloudflare Radar API response",
                     denominator="n/a",
                     methodology_note="Payload received but botClass fields not mapped",
-                    limitations=limitations
-                    + ["Adapter could not locate botClass summary fields"],
+                    limitations=[*limitations, "Adapter could not locate botClass summary fields"],
                     extras={"result_keys": list(result.keys())},
                 )
             )

@@ -224,7 +224,7 @@ def classify_path(path: str | Path) -> FileKind:
     suffix = p.suffix.lower()
     if suffix in {".pcap", ".pcapng", ".cap"}:
         return "pcap"
-    if suffix == ".bscope" or p.is_dir() and (p / "events.jsonl").exists():
+    if suffix == ".bscope" or (p.is_dir() and (p / "events.jsonl").exists()):
         return "session"
     if suffix in {".log", ".txt", ".json", ".jsonl", ".ndjson"}:
         return "log"
