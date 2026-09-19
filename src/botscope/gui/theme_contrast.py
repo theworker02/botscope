@@ -6,7 +6,7 @@ HIGH_CONTRAST = """
 QWidget {
     background-color: #000000;
     color: #ffffff;
-    font-family: "Bahnschrift", "Segoe UI Semibold", "Segoe UI", "IBM Plex Sans", sans-serif;
+    font-family: "Segoe UI", "Segoe UI Variable Text", sans-serif;
     font-size: 14px;
 }
 QMainWindow, QDialog {
@@ -211,7 +211,7 @@ QLabel#metricValue {
     font-size: 30px;
     font-weight: 800;
     color: #ffffff;
-    font-family: "Cascadia Mono", "Consolas", monospace;
+    font-family: "Consolas", "Courier New", monospace;
 }
 QLabel#metricCaption {
     font-size: 12px;

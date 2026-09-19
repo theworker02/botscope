@@ -7,6 +7,8 @@ Usage (from repo root, with GUI extras installed):
 
 Writes PNGs under docs/assets/screenshots/. Clears any Cloudflare token
 field before capturing Settings so no secrets appear in docs assets.
+
+Forces Segoe UI so labels never render as empty tofu boxes.
 """
 
 from __future__ import annotations
@@ -22,15 +24,45 @@ if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
 
+def _assert_text_readable(path: Path) -> None:
+    """Fail fast if the grab looks like tofu-box font failure."""
+    from PIL import Image, ImageStat
+
+    im = Image.open(path).convert("RGB")
+    w, h = im.size
+    # Probe several content bands — pages differ in where labels sit.
+    bands = [
+        (0.28, 0.10, 0.75, 0.22),
+        (0.28, 0.22, 0.75, 0.40),
+        (0.28, 0.40, 0.70, 0.58),
+    ]
+    best_spread = 0
+    best_ink = 0
+    for left, top, right, bottom in bands:
+        band = im.crop((int(w * left), int(h * top), int(w * right), int(h * bottom)))
+        gray = band.convert("L")
+        extrema = gray.getextrema()
+        spread = (extrema[1] - extrema[0]) if extrema else 0
+        pixels = list(gray.getdata())
+        ink = sum(1 for v in pixels if v < 90)
+        best_spread = max(best_spread, spread)
+        best_ink = max(best_ink, ink)
+    # Tofu-box failures are nearly flat (spread ~0). Real UI has strong contrast.
+    if best_spread < 40:
+        raise SystemExit(
+            f"ERROR: {path.name} looks unreadable "
+            f"(spread={best_spread}, ink={best_ink}). Refusing overwrite."
+        )
+
+
 def main() -> int:
-    from PySide6.QtCore import QTimer
+    from PySide6.QtCore import QTimer, Qt
     from PySide6.QtWidgets import QApplication, QLineEdit
 
-    # Avoid welcome dialog / last-session reopen during capture.
     from botscope.gui.main_window import ObservatoryWindow
     from botscope.gui.motion import set_reduce_motion
     from botscope.gui.navigation import page_index
-    from botscope.gui.theme import set_chart_theme, stylesheet_for
+    from botscope.gui.theme import apply_application_font, set_chart_theme, stylesheet_for
     from botscope.ux import load_settings
 
     OUT.mkdir(parents=True, exist_ok=True)
@@ -42,25 +74,27 @@ def main() -> int:
         open_last_session_on_start=False,
         reduce_motion=True,
         chart_animation=False,
-        # Docs shots should show full branded sidebar, not a collapsed strip.
         sidebar_collapsed=False,
         sidebar_width=220,
         theme="instrument",
-        # Never render a real token into docs screenshots.
         cloudflare_radar_token=None,
     )
 
+    # Prefer crisp integer DPI for documentation grabs.
+    QApplication.setHighDpiScaleFactorRoundingPolicy(
+        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough
+    )
     app = QApplication(sys.argv)
     app.setApplicationName("BotScope")
     app.setOrganizationName("BotScope")
     app.setStyle("Fusion")
+    apply_application_font(app)
     set_chart_theme(capture_settings.theme)
     set_reduce_motion(True)
     app.setStyleSheet(stylesheet_for(capture_settings.theme))
 
     win = ObservatoryWindow(settings=capture_settings)
     win.resize(1440, 900)
-    # Force expanded branded sidebar for documentation shots.
     win._sidebar_collapsed = False
     win.nav_collapse_btn.setText("«")
     if hasattr(win, "_set_nav_collapsed_labels"):
@@ -71,8 +105,8 @@ def main() -> int:
     win.show()
     win.raise_()
     win.activateWindow()
-    # Re-assert sizes after show (layout may clamp before first paint).
     win._nav_splitter.setSizes([220, 1220])
+    app.processEvents()
 
     shots: list[tuple[str, str]] = [
         ("observatory", "observatory-dashboard.png"),
@@ -86,9 +120,14 @@ def main() -> int:
     state = {"phase": "load_demo", "attempts": 0}
 
     def grab(name: str) -> None:
+        app.processEvents()
         path = OUT / name
+        # QWidget.grab() is reliable once fonts are registered into QFontDatabase.
         pix = win.grab()
+        if pix.isNull() or pix.width() < 400:
+            raise SystemExit(f"ERROR: null/empty grab for {name}")
         pix.save(str(path), "PNG")
+        _assert_text_readable(path)
         print(f"wrote {path} ({pix.width()}x{pix.height()})")
 
     def tick() -> None:
@@ -126,19 +165,16 @@ def main() -> int:
             if settle == 0:
                 win.tabs.setCurrentIndex(page_index(page_id))
                 if page_id == "settings":
-                    # Ensure token field is empty/masked placeholder only.
                     token = win.settings_panel.cf_token
                     token.clear()
                     token.setEchoMode(QLineEdit.EchoMode.Password)
                     token.setPlaceholderText(
                         "OPTIONAL — leave blank; not needed for your server logs"
                     )
-                elif page_id == "global":
-                    # Give Global panel a moment to paint status chips.
-                    pass
                 state["settle"] = 1
                 return
-            if settle < 3:
+            # Longer settle so layout + fonts fully paint before grab.
+            if settle < 8:
                 state["settle"] = settle + 1
                 return
             grab(filename)
@@ -147,11 +183,9 @@ def main() -> int:
             return
 
     timer = QTimer()
-    timer.setInterval(150)
+    timer.setInterval(200)
     timer.timeout.connect(tick)
     timer.start()
-    # Kick off after the event loop starts.
-    QTimer.singleShot(400, lambda: None)
     return app.exec()
 
 

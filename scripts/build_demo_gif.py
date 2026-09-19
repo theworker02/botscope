@@ -3,11 +3,12 @@
 
 from __future__ import annotations
 
+import os
 import shutil
 import subprocess
 from pathlib import Path
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 SHOTS = ROOT / "docs" / "assets" / "screenshots"
@@ -23,10 +24,25 @@ ORDER = [
 ]
 
 
+def _caption_font(size: int = 16) -> ImageFont.ImageFont:
+    candidates = [
+        Path(os.environ.get("WINDIR", r"C:\Windows")) / "Fonts" / "segoeui.ttf",
+        Path(os.environ.get("WINDIR", r"C:\Windows")) / "Fonts" / "arial.ttf",
+    ]
+    for path in candidates:
+        if path.is_file():
+            try:
+                return ImageFont.truetype(str(path), size=size)
+            except OSError:
+                continue
+    return ImageFont.load_default()
+
+
 def main() -> None:
     DEMO.mkdir(parents=True, exist_ok=True)
     frames: list[Image.Image] = []
     target_w = 960
+    font = _caption_font(16)
     for name, caption in ORDER:
         im = Image.open(SHOTS / name).convert("RGB")
         w, h = im.size
@@ -38,7 +54,7 @@ def main() -> None:
         canvas = Image.new("RGB", (im.width, im.height + bar_h), (21, 32, 43))
         canvas.paste(im, (0, bar_h))
         draw = ImageDraw.Draw(canvas)
-        draw.text((14, 10), f"BotScope — {caption}", fill=(216, 226, 235))
+        draw.text((14, 8), f"BotScope — {caption}", fill=(216, 226, 235), font=font)
         frames.append(canvas)
 
     gif_path = DEMO / "botscope-tour.gif"

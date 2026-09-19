@@ -177,7 +177,7 @@ class ShareRing(QWidget):
         )
         painter.setPen(QColor(colors["ink"]))
         value_font = QFont(painter.font())
-        value_font.setFamily("Cascadia Mono")
+        value_font.setFamily("Consolas")
         value_font.setPointSize(20)
         value_font.setBold(True)
         painter.setFont(value_font)

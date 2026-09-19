@@ -60,6 +60,51 @@ def chart_colors() -> dict[str, str]:
     return CHART_PALETTE.get(_ACTIVE_CHART_THEME, CHART_PALETTE["instrument"])
 
 
+def apply_application_font(app) -> None:
+    """Force a universally available UI font so text never renders as tofu boxes.
+
+    Some Windows + Qt environments expose an empty QFontDatabase (family_count=0),
+    which makes every label render as hollow .notdef boxes. We explicitly register
+    common system TTF files when the database is empty or missing Segoe UI.
+    """
+    import os
+    from pathlib import Path
+
+    from PySide6.QtGui import QFont, QFontDatabase
+
+    def _ensure_system_fonts() -> None:
+        if QFontDatabase.hasFamily("Segoe UI") and QFontDatabase.hasFamily("Consolas"):
+            return
+        windir = Path(os.environ.get("WINDIR", r"C:\Windows"))
+        font_dir = windir / "Fonts"
+        if not font_dir.is_dir():
+            return
+        for filename in (
+            "segoeui.ttf",
+            "segoeuib.ttf",
+            "segoeuil.ttf",
+            "segoeuiz.ttf",
+            "seguisb.ttf",
+            "consola.ttf",
+            "consolab.ttf",
+            "arial.ttf",
+            "arialbd.ttf",
+            "tahoma.ttf",
+        ):
+            path = font_dir / filename
+            if path.is_file():
+                QFontDatabase.addApplicationFont(str(path))
+
+    _ensure_system_fonts()
+
+    preferred = ("Segoe UI", "Arial", "Tahoma", "Sans Serif")
+    family = next((name for name in preferred if QFontDatabase.hasFamily(name)), "Sans Serif")
+    font = QFont(family, 10)
+    font.setStyleHint(QFont.StyleHint.SansSerif)
+    font.setHintingPreference(QFont.HintingPreference.PreferFullHinting)
+    app.setFont(font)
+
+
 def stylesheet_for(theme: str) -> str:
     from botscope.gui.theme_contrast import HIGH_CONTRAST
 
@@ -73,8 +118,8 @@ STYLESHEET = """
 QWidget {
     background-color: #e4ebf1;
     color: #15202b;
-    font-family: "Bahnschrift", "Segoe UI Semibold", "Segoe UI", "IBM Plex Sans", sans-serif;
-    font-size: 13px;
+    font-family: "Segoe UI", "Segoe UI Variable Text", sans-serif;
+    font-size: 14px;
 }
 QMainWindow, QDialog {
     background-color: #d5dee7;
@@ -406,7 +451,7 @@ QLabel#metricValue {
     font-size: 28px;
     font-weight: 700;
     color: #15202b;
-    font-family: "Cascadia Mono", "Consolas", "Courier New", monospace;
+    font-family: "Consolas", "Courier New", monospace;
 }
 QLabel#metricCaption {
     font-size: 11px;

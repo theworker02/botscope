@@ -23,7 +23,7 @@ def launch_gui(*, show_welcome: bool | None = None) -> None:
 
     from botscope.gui.main_window import ObservatoryWindow
     from botscope.gui.motion import set_reduce_motion
-    from botscope.gui.theme import set_chart_theme, stylesheet_for
+    from botscope.gui.theme import apply_application_font, set_chart_theme, stylesheet_for
     from botscope.ux import load_settings
 
     settings = load_settings()
@@ -31,6 +31,7 @@ def launch_gui(*, show_welcome: bool | None = None) -> None:
     app.setApplicationName("BotScope")
     app.setOrganizationName("BotScope")
     app.setStyle("Fusion")
+    apply_application_font(app)
     set_chart_theme(settings.theme)
     set_reduce_motion(settings.reduce_motion)
     app.setStyleSheet(stylesheet_for(settings.theme))
