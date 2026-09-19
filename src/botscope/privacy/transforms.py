@@ -68,7 +68,7 @@ class PrivacyTransform:
             if isinstance(ip, ipaddress.IPv4Address):
                 parts = value.split(".")
                 transforms.append("ip_truncated")
-                return ".".join(parts[:3] + ["0"])
+                return ".".join([*parts[:3], "0"])
             # IPv6: zero lower 80 bits roughly via /48 keep
             exploded = ip.exploded.split(":")
             transforms.append("ip_truncated")
