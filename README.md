@@ -7,6 +7,8 @@
 BotScope is an **Internet-wide bot traffic census**: the Global Observatory federates public crawler/IP panels, crawl catalogs, and optional CDN estimates into a worldwide automation picture — alongside a local analyzer and native Qt desktop Observatory for authorized logs, sessions, and live capture.
 
 [![CI](https://github.com/theworker02/botscope/actions/workflows/ci.yml/badge.svg)](https://github.com/theworker02/botscope/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/botscope.svg)](https://pypi.org/project/botscope/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/botscope.svg)](https://pypi.org/project/botscope/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue?logo=python&logoColor=white)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)](https://github.com/theworker02/botscope)
@@ -14,6 +16,8 @@ BotScope is an **Internet-wide bot traffic census**: the Global Observatory fede
 [![Code style: Ruff](https://img.shields.io/badge/code%20style-ruff-D7FF64?logo=ruff)](https://docs.astral.sh/ruff/)
 [![Tests](https://img.shields.io/badge/tests-pytest-0A9EDC?logo=pytest&logoColor=white)](https://github.com/theworker02/botscope/actions/workflows/ci.yml)
 [![Status](https://img.shields.io/badge/status-v2.0.0%20beta-informational)](CHANGELOG.md)
+
+**Install from PyPI:** [`pip install botscope`](https://pypi.org/project/botscope/) · GUI: [`pip install "botscope[gui]"`](https://pypi.org/project/botscope/)
 
 > Network contribution is **OFF by default**. BotScope does not perform unauthorized scanning.
 > Zero-config for your own logs: **no account**, **no cloud profile**, and **no API key** required to classify local traffic.
@@ -100,7 +104,19 @@ Full matrix: [`FEATURES.md`](FEATURES.md). Machine-readable registry: `botscope 
 
 ## Quickstart
 
-Requires **Python 3.10+**.
+Requires **Python 3.10+**. Install from [PyPI](https://pypi.org/project/botscope/):
+
+```bash
+pip install "botscope[gui]"
+```
+
+Core (CLI / library only):
+
+```bash
+pip install botscope
+```
+
+From source (contributors):
 
 ```bash
 git clone https://github.com/theworker02/botscope.git

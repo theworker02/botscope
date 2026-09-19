@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "botscope"
 version = "2.0.0"
-description = "Python-first observability platform for measuring and understanding automated Internet traffic."
+description = "Internet-wide bot traffic census with a local measurement workstation and native Qt Observatory."
 readme = "README.md"
 license = "Apache-2.0"
 requires-python = ">=3.10"
@@ -14,6 +14,7 @@ authors = [
 ]
 keywords = [
   "bots",
+  "census",
   "traffic-analysis",
   "observability",
   "classification",
@@ -85,6 +86,8 @@ Homepage = "https://github.com/theworker02/botscope"
 Documentation = "https://github.com/theworker02/botscope#readme"
 Repository = "https://github.com/theworker02/botscope"
 Issues = "https://github.com/theworker02/botscope/issues"
+Changelog = "https://github.com/theworker02/botscope/blob/main/CHANGELOG.md"
+PyPI = "https://pypi.org/project/botscope/"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/botscope"]
