@@ -26,7 +26,7 @@ if str(SRC) not in sys.path:
 
 def _assert_text_readable(path: Path) -> None:
     """Fail fast if the grab looks like tofu-box font failure."""
-    from PIL import Image, ImageStat
+    from PIL import Image
 
     im = Image.open(path).convert("RGB")
     w, h = im.size
@@ -56,7 +56,7 @@ def _assert_text_readable(path: Path) -> None:
 
 
 def main() -> int:
-    from PySide6.QtCore import QTimer, Qt
+    from PySide6.QtCore import Qt, QTimer
     from PySide6.QtWidgets import QApplication, QLineEdit
 
     from botscope.gui.main_window import ObservatoryWindow
