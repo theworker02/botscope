@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" role="img" aria-labelledby="title desc">
+  <title id="title">BotScope</title>
+  <desc id="desc">BotScope wordmark with radar-scope mark</desc>
+  <defs>
+    <linearGradient id="sweep" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a8f8a" stop-opacity="0.15"/>
+      <stop offset="55%" stop-color="#3a8f8a" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#5ec4bd" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+  <!-- Mark -->
+  <g transform="translate(80,80)">
+    <circle r="58" fill="#1a2332"/>
+    <circle r="52" fill="none" stroke="#4a6078" stroke-width="2"/>
+    <circle r="34" fill="none" stroke="#3d5168" stroke-width="1.5"/>
+    <circle r="8" fill="none" stroke="#5ec4bd" stroke-width="2"/>
+    <!-- radar sweep wedge -->
+    <path d="M0,0 L0,-52 A52,52 0 0 1 36.8,-36.8 Z" fill="url(#sweep)"/>
+    <line x1="0" y1="0" x2="0" y2="-52" stroke="#5ec4bd" stroke-width="2" stroke-linecap="round"/>
+    <!-- crosshair ticks -->
+    <line x1="0" y1="-58" x2="0" y2="-48" stroke="#9aabba" stroke-width="2"/>
+    <line x1="0" y1="48" x2="0" y2="58" stroke="#9aabba" stroke-width="2"/>
+    <line x1="-58" y1="0" x2="-48" y2="0" stroke="#9aabba" stroke-width="2"/>
+    <line x1="48" y1="0" x2="58" y2="0" stroke="#9aabba" stroke-width="2"/>
+    <!-- sensor nodes -->
+    <circle cx="26" cy="-30" r="3.5" fill="#3a8f8a"/>
+    <circle cx="-32" cy="18" r="2.5" fill="#5ec4bd"/>
+    <circle cx="0" cy="0" r="3" fill="#e8eef2"/>
+  </g>
+  <!-- Wordmark -->
+  <g transform="translate(168,52)" fill="#1a2332">
+    <text font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="-1.5">BotScope</text>
+    <text y="42" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="500" fill="#516072" letter-spacing="0.5">Automated traffic observability</text>
+  </g>
+</svg>

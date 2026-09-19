@@ -1,0 +1,5 @@
+[
+  {"asn": 15169, "name": "GOOGLE", "prefix": "8.8.8.0/24", "country": "US"},
+  {"asn": 13335, "name": "CLOUDFLARENET", "prefix": "1.1.1.0/24", "country": "US"},
+  {"asn": 16509, "name": "AMAZON-02", "prefix": "52.0.0.0/8", "country": "US"}
+]

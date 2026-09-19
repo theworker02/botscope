@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.tox/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# BotScope local state
+*.bscope
+*.bsdb
+.botscope/
+local_data/
+tmp/
+secrets.vault
+**/secrets.vault
+secrets.seal
+**/secrets.seal
+security.lockout
+**/security.lockout
+
+# Native build artifacts
+native/target/
+*.pyd
+*.dll
+
+# Secrets
+.env
+.env.*
+!.env.example
+credentials.json
+*.pem
+*.key
+
+# Benchmark outputs (keep receipts, ignore large dumps)
+benchmarks/output/
+!benchmarks/receipts/

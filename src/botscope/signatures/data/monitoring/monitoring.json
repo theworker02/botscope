@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Pingdom",
+    "category": "MONITORING / HEALTH CHECK",
+    "evidence": ["User-Agent token Pingdom"],
+    "source": "vendor monitoring documentation",
+    "verification_method": "User-Agent match",
+    "date_checked": "2026-03-18",
+    "confidence": 0.75,
+    "notes": "",
+    "ua_patterns": ["Pingdom"],
+    "rdns_suffixes": [],
+    "expected_asns": [],
+    "network_owner_tokens": ["pingdom", "solarwinds"],
+    "network_ranges": []
+  },
+  {
+    "name": "UptimeRobot",
+    "category": "MONITORING / HEALTH CHECK",
+    "evidence": ["User-Agent token UptimeRobot"],
+    "source": "https://uptimerobot.com/",
+    "verification_method": "User-Agent match",
+    "date_checked": "2026-03-18",
+    "confidence": 0.75,
+    "notes": "",
+    "ua_patterns": ["UptimeRobot"],
+    "rdns_suffixes": [],
+    "expected_asns": [],
+    "network_owner_tokens": [],
+    "network_ranges": []
+  },
+  {
+    "name": "Prometheus",
+    "category": "MONITORING / HEALTH CHECK",
+    "evidence": ["User-Agent token Prometheus"],
+    "source": "https://prometheus.io/",
+    "verification_method": "User-Agent match",
+    "date_checked": "2026-09-18",
+    "confidence": 0.8,
+    "notes": "",
+    "ua_patterns": ["Prometheus"],
+    "rdns_suffixes": [],
+    "expected_asns": [],
+    "network_owner_tokens": [],
+    "network_ranges": []
+  }
+]

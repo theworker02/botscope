@@ -1,0 +1,41 @@
+name: Feature request
+description: Propose a new capability for BotScope
+title: "[feat] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / research need
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Classification / identity
+        - Ingest / parsers
+        - Provenance / quality
+        - Compare / research export
+        - CLI / GUI
+        - Plugins
+        - Docs
+        - Other
+    validations:
+      required: true
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: Constraints acknowledged
+      options:
+        - label: I am not asking for unauthorized network scanning or surveillance features
+          required: true
+        - label: UNKNOWN remains a valid scientific outcome (no forced certainty)
+          required: true

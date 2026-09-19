@@ -1,0 +1,46 @@
+name: Bug report
+description: Report unexpected behavior in BotScope
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve BotScope. Please do **not** paste secrets, full raw logs with PII, or unauthorized capture data.
+  - type: input
+    id: version
+    attributes:
+      label: BotScope version
+      placeholder: "2.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options: [Windows, Linux, macOS, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: doctor
+    attributes:
+      label: Output of `botscope doctor` (sanitized)
+      description: Prefer `botscope doctor --bundle` then attach only the sanitized summary.

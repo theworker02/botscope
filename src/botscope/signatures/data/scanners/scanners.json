@@ -1,0 +1,32 @@
+[
+  {
+    "name": "sqlmap",
+    "category": "SECURITY SCANNER",
+    "evidence": ["User-Agent token sqlmap"],
+    "source": "https://sqlmap.org/",
+    "verification_method": "User-Agent match",
+    "date_checked": "2026-03-18",
+    "confidence": 0.85,
+    "notes": "Tool presence indicates automated scanning intent; context still required.",
+    "ua_patterns": ["sqlmap"],
+    "rdns_suffixes": [],
+    "expected_asns": [],
+    "network_owner_tokens": [],
+    "network_ranges": []
+  },
+  {
+    "name": "Nikto",
+    "category": "SECURITY SCANNER",
+    "evidence": ["User-Agent token Nikto"],
+    "source": "https://github.com/sullo/nikto",
+    "verification_method": "User-Agent match",
+    "date_checked": "2026-03-18",
+    "confidence": 0.85,
+    "notes": "",
+    "ua_patterns": ["Nikto"],
+    "rdns_suffixes": [],
+    "expected_asns": [],
+    "network_owner_tokens": [],
+    "network_ranges": []
+  }
+]

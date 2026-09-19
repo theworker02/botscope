@@ -1,0 +1,62 @@
+[
+  {
+    "name": "SemrushBot",
+    "category": "SCRAPER",
+    "evidence": ["User-Agent token SemrushBot"],
+    "source": "https://www.semrush.com/bot/",
+    "verification_method": "User-Agent match; network corroboration when available",
+    "date_checked": "2026-09-18",
+    "confidence": 0.75,
+    "notes": "SEO / competitive-intel crawler — not a search engine primary index crawler.",
+    "ua_patterns": ["SemrushBot"],
+    "rdns_suffixes": [],
+    "expected_asns": [],
+    "network_owner_tokens": ["semrush"],
+    "network_ranges": []
+  },
+  {
+    "name": "AhrefsBot",
+    "category": "SCRAPER",
+    "evidence": ["User-Agent token AhrefsBot"],
+    "source": "https://ahrefs.com/robot",
+    "verification_method": "User-Agent match",
+    "date_checked": "2026-09-18",
+    "confidence": 0.75,
+    "notes": "",
+    "ua_patterns": ["AhrefsBot"],
+    "rdns_suffixes": [],
+    "expected_asns": [],
+    "network_owner_tokens": ["ahrefs"],
+    "network_ranges": []
+  },
+  {
+    "name": "Scrapy",
+    "category": "SCRAPER",
+    "evidence": ["User-Agent token Scrapy"],
+    "source": "https://scrapy.org/",
+    "verification_method": "User-Agent match",
+    "date_checked": "2026-09-18",
+    "confidence": 0.7,
+    "notes": "Framework default UA; operators often customize.",
+    "ua_patterns": ["Scrapy"],
+    "rdns_suffixes": [],
+    "expected_asns": [],
+    "network_owner_tokens": [],
+    "network_ranges": []
+  },
+  {
+    "name": "MJ12bot",
+    "category": "SCRAPER",
+    "evidence": ["User-Agent token MJ12bot"],
+    "source": "https://mj12bot.com/",
+    "verification_method": "User-Agent match",
+    "date_checked": "2026-09-18",
+    "confidence": 0.7,
+    "notes": "",
+    "ua_patterns": ["MJ12bot"],
+    "rdns_suffixes": [],
+    "expected_asns": [],
+    "network_owner_tokens": ["majestic"],
+    "network_ranges": []
+  }
+]

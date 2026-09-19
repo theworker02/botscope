@@ -1,0 +1,32 @@
+[
+  {
+    "name": "FacebookExternalHit",
+    "category": "SOCIAL / PREVIEW BOT",
+    "evidence": ["User-Agent token facebookexternalhit"],
+    "source": "https://developers.facebook.com/docs/sharing/webmasters/crawler",
+    "verification_method": "User-Agent + published documentation",
+    "date_checked": "2026-03-18",
+    "confidence": 0.7,
+    "notes": "",
+    "ua_patterns": ["facebookexternalhit"],
+    "rdns_suffixes": [],
+    "expected_asns": [],
+    "network_owner_tokens": ["meta", "facebook"],
+    "network_ranges": []
+  },
+  {
+    "name": "Twitterbot",
+    "category": "SOCIAL / PREVIEW BOT",
+    "evidence": ["User-Agent token Twitterbot"],
+    "source": "https://developer.x.com/en/docs/twitter-for-websites/cards/guides/getting-started",
+    "verification_method": "User-Agent match",
+    "date_checked": "2026-03-18",
+    "confidence": 0.65,
+    "notes": "",
+    "ua_patterns": ["Twitterbot"],
+    "rdns_suffixes": [],
+    "expected_asns": [],
+    "network_owner_tokens": ["twitter", "x corp"],
+    "network_ranges": []
+  }
+]

@@ -1,0 +1,30 @@
+name: Documentation issue
+description: Report incorrect, incomplete, or misleading docs
+title: "[docs] "
+labels: ["documentation"]
+body:
+  - type: input
+    id: path
+    attributes:
+      label: Document path or URL
+      placeholder: docs/research/METHODOLOGY.md
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Issue type
+      options:
+        - Incorrect status label (claims IMPLEMENTED but code missing)
+        - Missing guide / tutorial
+        - Unclear wording
+        - Broken link
+        - Privacy / security wording concern
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+    validations:
+      required: true
