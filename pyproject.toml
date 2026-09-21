@@ -1,4 +1,4 @@
-[build-system]
+﻿[build-system]
 requires = ["hatchling>=1.25"]
 build-backend = "hatchling.build"
 
@@ -7,7 +7,7 @@ name = "botscope"
 version = "2.0.0"
 description = "Internet-wide bot traffic census with a local measurement workstation and native Qt Observatory."
 readme = "README.md"
-license = "Apache-2.0"
+license = "Proprietary"
 requires-python = ">=3.10"
 authors = [
   { name = "BotScope Contributors" },
