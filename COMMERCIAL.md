@@ -1,4 +1,4 @@
-﻿# Commercial licensing — botscope
+# Commercial licensing — botscope
 
 botscope is **source-available proprietary software**, not open source.
 

@@ -1,4 +1,4 @@
-﻿# BotScope
+# BotScope
 
 <img src="docs/assets/botscope-logo.svg" alt="BotScope" width="480"/>
 
