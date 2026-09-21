@@ -53,7 +53,7 @@ def citation_cff_snippet() -> str:
         f"title: BotScope\n"
         f"version: {__version__}\n"
         f"url: https://github.com/theworker02/botscope\n"
-        f"license: Apache-2.0\n"
+        f"license: SEE LICENSE\n"
         f"# DOI: not assigned — do not invent one\n"
     )
 
