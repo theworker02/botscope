@@ -1,10 +1,18 @@
 # BotScope
 
+
+---
+
+## License & acquisition
+
+This project is **proprietary**. Production use, redistribution, and commercial deployment require a written commercial license or completed acquisition. See [LICENSE](./LICENSE) and [ACQUISITION.md](./ACQUISITION.md). Contact [@theworker02](https://github.com/theworker02).
+
+
 <img src="docs/assets/botscope-logo.svg" alt="BotScope" width="480"/>
 
 **Python-first observability for an Internet-wide census of automated traffic.**
 
-BotScope is an **Internet-wide bot traffic census**: the Global Observatory federates public crawler/IP panels, crawl catalogs, and optional CDN estimates into a worldwide automation picture â€” alongside a local analyzer and native Qt desktop Observatory for authorized logs, sessions, and live capture.
+BotScope is an **Internet-wide bot traffic census**: the Global Observatory federates public crawler/IP panels, crawl catalogs, and optional CDN estimates into a worldwide automation picture Ã¢â‚¬â€ alongside a local analyzer and native Qt desktop Observatory for authorized logs, sessions, and live capture.
 
 [![CI](https://github.com/theworker02/botscope/actions/workflows/ci.yml/badge.svg)](https://github.com/theworker02/botscope/actions/workflows/ci.yml)
 [![PyPI](https://img.shields.io/pypi/v/botscope.svg)](https://pypi.org/project/botscope/)
@@ -17,7 +25,7 @@ BotScope is an **Internet-wide bot traffic census**: the Global Observatory fede
 [![Tests](https://img.shields.io/badge/tests-pytest-0A9EDC?logo=pytest&logoColor=white)](https://github.com/theworker02/botscope/actions/workflows/ci.yml)
 [![Status](https://img.shields.io/badge/status-v2.0.0%20beta-informational)](CHANGELOG.md)
 
-**Install from PyPI:** [`pip install botscope`](https://pypi.org/project/botscope/) Â· GUI: [`pip install "botscope[gui]"`](https://pypi.org/project/botscope/)
+**Install from PyPI:** [`pip install botscope`](https://pypi.org/project/botscope/) Ã‚Â· GUI: [`pip install "botscope[gui]"`](https://pypi.org/project/botscope/)
 
 > Network contribution is **OFF by default**. BotScope does not perform unauthorized scanning.
 > Zero-config for your own logs: **no account**, **no cloud profile**, and **no API key** required to classify local traffic.
@@ -26,7 +34,7 @@ BotScope is an **Internet-wide bot traffic census**: the Global Observatory fede
 
 ## Try in 60 seconds
 
-No GUI, no network, no API keys — just a labeled offline demo:
+No GUI, no network, no API keys â€” just a labeled offline demo:
 
 ```bash
 pip install botscope
@@ -58,18 +66,18 @@ First-hour guide: [`docs/guides/EASE_OF_ACCESS.md`](docs/guides/EASE_OF_ACCESS.m
   <img src="docs/assets/screenshots/observatory-dashboard.png" alt="Observatory dashboard with DEMO DATA banner, KPIs, composition ring, and Traffic Pulse" width="900"/>
 </p>
 
-*Observatory â€” KPI cards, composition ring, Traffic Pulse, and category breakdown on the bundled synthetic demo corpus (DEMO DATA banner visible).*
+*Observatory Ã¢â‚¬â€ KPI cards, composition ring, Traffic Pulse, and category breakdown on the bundled synthetic demo corpus (DEMO DATA banner visible).*
 
 | | |
 |:--:|:--:|
-| <img src="docs/assets/screenshots/global-observatory.png" alt="Global Observatory Internet-wide census" width="440"/><br/>*Global â€” Internet-wide census from zero-auth public sources; Cloudflare Radar optional* | <img src="docs/assets/screenshots/events.png" alt="Events table with query filter" width="440"/><br/>*Events â€” virtualized table, query language, Classification Inspector* |
-| <img src="docs/assets/screenshots/bot-library.png" alt="Bot Library known vs observed" width="440"/><br/>*Bot Library â€” known signatures vs observed-in-dataset markers* | <img src="docs/assets/screenshots/sources.png" alt="Sources registry table" width="440"/><br/>*Sources â€” registry status for public feeds and optional providers* |
+| <img src="docs/assets/screenshots/global-observatory.png" alt="Global Observatory Internet-wide census" width="440"/><br/>*Global Ã¢â‚¬â€ Internet-wide census from zero-auth public sources; Cloudflare Radar optional* | <img src="docs/assets/screenshots/events.png" alt="Events table with query filter" width="440"/><br/>*Events Ã¢â‚¬â€ virtualized table, query language, Classification Inspector* |
+| <img src="docs/assets/screenshots/bot-library.png" alt="Bot Library known vs observed" width="440"/><br/>*Bot Library Ã¢â‚¬â€ known signatures vs observed-in-dataset markers* | <img src="docs/assets/screenshots/sources.png" alt="Sources registry table" width="440"/><br/>*Sources Ã¢â‚¬â€ registry status for public feeds and optional providers* |
 
 <p align="center">
   <img src="docs/assets/screenshots/settings.png" alt="Settings preferences panel" width="720"/>
 </p>
 
-*Settings â€” local theme, privacy, and optional Cloudflare Radar token for CDN estimates (field shown empty; no account required).*
+*Settings Ã¢â‚¬â€ local theme, privacy, and optional Cloudflare Radar token for CDN estimates (field shown empty; no account required).*
 
 ---
 
@@ -81,9 +89,9 @@ Animated tour of the main Observatory pages (demo data):
   <img src="docs/assets/demo/botscope-tour.gif" alt="BotScope GUI tour animated GIF" width="720"/>
 </p>
 
-[Screenshot strip](docs/assets/demo/botscope-tour-strip.png) Â· [Recording script / MP4 placeholder](docs/assets/demo/README.md)
+[Screenshot strip](docs/assets/demo/botscope-tour-strip.png) Ã‚Â· [Recording script / MP4 placeholder](docs/assets/demo/README.md)
 
-To capture a short screen recording yourself (launch â†’ Demo â†’ KPIs â†’ Global â†’ Events), follow the steps in [`docs/assets/demo/README.md`](docs/assets/demo/README.md) and drop `botscope-demo.mp4` (or `.webm`) beside the GIF.
+To capture a short screen recording yourself (launch Ã¢â€ â€™ Demo Ã¢â€ â€™ KPIs Ã¢â€ â€™ Global Ã¢â€ â€™ Events), follow the steps in [`docs/assets/demo/README.md`](docs/assets/demo/README.md) and drop `botscope-demo.mp4` (or `.webm`) beside the GIF.
 
 ---
 
@@ -95,16 +103,16 @@ BotScope is an **Internet-wide census of automated traffic**, with a local measu
 - Classify requests from combined/common access logs (and optional PCAP / live paths)
 - Separate **OBSERVED** totals from **CLASSIFIED** shares, with provenance badges
 - Keep an honest **UNKNOWN** outcome instead of forcing certainty
-- Explore both **global census views** and local sessions in a **native desktop Observatory** (Qt / PySide6 â€” not a website)
+- Explore both **global census views** and local sessions in a **native desktop Observatory** (Qt / PySide6 Ã¢â‚¬â€ not a website)
 
 ## What BotScope is not
 
-- **Not** limited to a single site or sensor â€” Global Observatory is the Internet-wide census surface
+- **Not** limited to a single site or sensor Ã¢â‚¬â€ Global Observatory is the Internet-wide census surface
 - **Not** a claim that one local log alone equals the whole Internet (local shares stay labeled local; the census comes from federated global sources)
-- **Not** a cloud SaaS â€” analysis and preferences stay on your machine by default
+- **Not** a cloud SaaS Ã¢â‚¬â€ analysis and preferences stay on your machine by default
 - **Not** a substitute for authorization: only analyze systems and traffic you own or have permission to measure
 
-The productâ€™s primary global story is the **Internet-wide census**. Local Observatory KPIs remain dataset-scoped so you can compare your sensors against that census without conflating the two.
+The productÃ¢â‚¬â„¢s primary global story is the **Internet-wide census**. Local Observatory KPIs remain dataset-scoped so you can compare your sensors against that census without conflating the two.
 
 ---
 
@@ -120,7 +128,7 @@ The productâ€™s primary global story is the **Internet-wide census**. Local
 | **Dataset Health** | Multi-dimension quality scorecard for the loaded session |
 | **Events** | Virtualized event browser, quick search, shared safe query language |
 | **Compare** | Session-to-session deltas and classifier-vs-labels panels (no causal claims) |
-| **Provenance** | OBSERVED vs CLASSIFIED vs INFERRED â€” numbers keep their lineage |
+| **Provenance** | OBSERVED vs CLASSIFIED vs INFERRED Ã¢â‚¬â€ numbers keep their lineage |
 | **Exports** | Multi-format reports (Markdown, HTML, JSON, CSV) and research export helpers |
 | **Live capture** | Authorized log-tail and optional local-interface sniff; measured rates only |
 | **CLI + Python API** | Headless analyze / query / report / doctor alongside the GUI |
@@ -190,7 +198,7 @@ print(result.automation_fraction)
 print(result.stats.by_category)
 ```
 
-More detail: [`docs/guides/EASE_OF_ACCESS.md`](docs/guides/EASE_OF_ACCESS.md) · [`docs/guides/QUICKSTART.md`](docs/guides/QUICKSTART.md) · [`docs/guides/INSTALLATION.md`](docs/guides/INSTALLATION.md)
+More detail: [`docs/guides/EASE_OF_ACCESS.md`](docs/guides/EASE_OF_ACCESS.md) Â· [`docs/guides/QUICKSTART.md`](docs/guides/QUICKSTART.md) Â· [`docs/guides/INSTALLATION.md`](docs/guides/INSTALLATION.md)
 
 ---
 
@@ -225,27 +233,27 @@ Run `botscope --help` or `botscope <command> --help` for options. Tutorials live
 
 ```
 Access log / PCAP / live sensor
-        â”‚
-        â–¼
+        Ã¢â€â€š
+        Ã¢â€“Â¼
    Ingest + privacy transforms
-        â”‚
-        â–¼
+        Ã¢â€â€š
+        Ã¢â€“Â¼
    Classify (rules, identity, optional ML)
-        â”‚
-        â”œâ”€â”€â–º .bscope session store (events, aggregates, workspace)
-        â”œâ”€â”€â–º CLI reports / export / research packs
-        â””â”€â”€â–º Observatory GUI (KPIs, Events, Global census, Live, â€¦)
-                 â”‚
-                 â””â”€â”€â–º Global federation â†’ Internet-wide census
+        Ã¢â€â€š
+        Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€“Âº .bscope session store (events, aggregates, workspace)
+        Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€“Âº CLI reports / export / research packs
+        Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€“Âº Observatory GUI (KPIs, Events, Global census, Live, Ã¢â‚¬Â¦)
+                 Ã¢â€â€š
+                 Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€“Âº Global federation Ã¢â€ â€™ Internet-wide census
                       (zero-auth public sources; Cloudflare Radar if you supply a token)
 ```
 
-- **Internet-wide census**: Global Observatory is the census product â€” federated public panels and optional CDN estimates.
+- **Internet-wide census**: Global Observatory is the census product Ã¢â‚¬â€ federated public panels and optional CDN estimates.
 - **Local-first**: sessions and preferences stay on disk unless you explicitly enable network contribution.
 - **Provenance-aware**: OBSERVED counts are never relabeled as CLASSIFIED shares; local KPIs stay distinct from the global census.
-- Methodology notes: [`docs/research/METHODOLOGY.md`](docs/research/METHODOLOGY.md) Â· [`docs/research/GLOBAL_ESTIMATION.md`](docs/research/GLOBAL_ESTIMATION.md).
+- Methodology notes: [`docs/research/METHODOLOGY.md`](docs/research/METHODOLOGY.md) Ã‚Â· [`docs/research/GLOBAL_ESTIMATION.md`](docs/research/GLOBAL_ESTIMATION.md).
 
-Deeper maps: [`docs/architecture/REPOSITORY_MAP.md`](docs/architecture/REPOSITORY_MAP.md) Â· diagrams in [`docs/architecture/diagrams/`](docs/architecture/diagrams/) Â· GUI guide [`docs/GUI.md`](docs/GUI.md)
+Deeper maps: [`docs/architecture/REPOSITORY_MAP.md`](docs/architecture/REPOSITORY_MAP.md) Ã‚Â· diagrams in [`docs/architecture/diagrams/`](docs/architecture/diagrams/) Ã‚Â· GUI guide [`docs/GUI.md`](docs/GUI.md)
 
 ---
 
@@ -260,7 +268,7 @@ Deeper maps: [`docs/architecture/REPOSITORY_MAP.md`](docs/architecture/REPOSITOR
 | [`docs/QUERY.md`](docs/QUERY.md) | Safe query language (CLI + GUI + Python) |
 | [`docs/CAPTURE.md`](docs/CAPTURE.md) | Authorized capture notes |
 | [`docs/PRIVACY.md`](docs/PRIVACY.md) | Privacy transforms and boundaries |
-| [`docs/GLOSSARY.md`](docs/GLOSSARY.md) | Terms (OBSERVED, CLASSIFIED, â€¦) |
+| [`docs/GLOSSARY.md`](docs/GLOSSARY.md) | Terms (OBSERVED, CLASSIFIED, Ã¢â‚¬Â¦) |
 | [`docs/research/METHODOLOGY.md`](docs/research/METHODOLOGY.md) | Measurement methodology |
 | [`docs/research/LIMITATIONS.md`](docs/research/LIMITATIONS.md) | What BotScope will not claim |
 | [`docs/sources/SOURCE_RESEARCH.md`](docs/sources/SOURCE_RESEARCH.md) | Public source inventory |
@@ -296,7 +304,7 @@ Cloudflare Radar is **optional**. Leave Settings blank for normal local-log work
 
 1. Treat **Global Observatory as an Internet-wide census**, built from federated sources with provenance  
 2. Prefer **UNKNOWN** over forced certainty  
-3. Separate **OBSERVED** counts from **CLASSIFIED** shares â€” and local KPIs from the global census  
+3. Separate **OBSERVED** counts from **CLASSIFIED** shares Ã¢â‚¬â€ and local KPIs from the global census  
 4. Privacy transforms and local-first storage by default  
 5. Network contribution remains **OFF** unless explicitly enabled  
 
@@ -319,5 +327,4 @@ ruff check src tests scripts
 
 ## License
 
-**Source-available proprietary** — evaluation under [LICENSE](./LICENSE); commercial / production use via [COMMERCIAL.md](./COMMERCIAL.md). See [LICENSE_TRANSITION_NOTICE.md](./LICENSE_TRANSITION_NOTICE.md) and [NOTICE](./NOTICE).
-
+**Source-available proprietary** â€” evaluation under [LICENSE](./LICENSE); commercial / production use via [COMMERCIAL.md](./COMMERCIAL.md). See [LICENSE_TRANSITION_NOTICE.md](./LICENSE_TRANSITION_NOTICE.md) and [NOTICE](./NOTICE).
