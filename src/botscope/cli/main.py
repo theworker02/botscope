@@ -832,30 +832,46 @@ def gui_cmd(no_welcome: bool) -> None:
     launch_gui(show_welcome=not no_welcome)
 
 
+@main.command("hello")
+@click.option("--json", "as_json", is_flag=True, help="Emit machine-readable JSON.")
+@click.option(
+    "--keep-session",
+    type=click.Path(path_type=Path),
+    default=None,
+    help="Optional path to save a .bscope session from the demo run.",
+)
+def hello_cmd(as_json: bool, keep_session: Path | None) -> None:
+    """Run the bundled demo corpus offline and print a friendly first-run summary.
+
+    Works without GUI, network, or API keys. Always labeled DEMO DATA.
+    """
+    from botscope.onboarding import format_hello_summary, run_hello_analysis
+
+    summary = run_hello_analysis(keep_session=keep_session)
+    if as_json:
+        console.print_json(data=summary)
+        return
+    console.print(format_hello_summary(summary))
+
+
+@main.command("access")
+@click.option("--json", "as_json", is_flag=True, help="Emit machine-readable JSON.")
+def access_cmd(as_json: bool) -> None:
+    """Print an ease-of-access checklist (install, hello, data locations, privacy)."""
+    from botscope.onboarding import access_checklist, format_access_checklist
+
+    if as_json:
+        console.print_json(data={"checklist": access_checklist()})
+        return
+    console.print(format_access_checklist())
+
+
 @main.command("quickstart")
 def quickstart_cmd() -> None:
     """Print the fastest path from install to a first measurement."""
-    console.print(
-        """
-[bold]BotScope quickstart[/bold]
+    from botscope.onboarding import quickstart_guide
 
-  1. Install GUI extras:
-       [cyan]pip install 'botscope[gui]'[/cyan]
-
-  2. Launch Observatory (native desktop):
-       [cyan]botscope[/cyan]
-       or [cyan]botscope gui --no-welcome[/cyan]
-
-  3. Or analyze from the CLI:
-       [cyan]botscope demo[/cyan]
-       [cyan]botscope analyze path/to/access.log --output run.bscope[/cyan]
-       [cyan]botscope batch logs/*.log --output-dir batch_out[/cyan]
-
-  4. Drag a log, PCAP, or .bscope folder onto the Observatory window.
-
-Tips: Settings → theme / privacy stay local. Network contribution defaults OFF.
-""".strip()
-    )
+    console.print(quickstart_guide())
 
 
 @main.command("batch")

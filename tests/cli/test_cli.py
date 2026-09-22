@@ -36,8 +36,35 @@ def test_cli_quickstart():
     runner = CliRunner()
     r = runner.invoke(main, ["quickstart"])
     assert r.exit_code == 0, r.output
+    assert "botscope hello" in r.output
     assert "botscope demo" in r.output
-    assert "batch" in r.output.lower()
+    assert "batch" in r.output.lower() or "analyze" in r.output.lower()
+    assert "doctor" in r.output.lower()
+    assert "privacy" in r.output.lower()
+
+
+def test_cli_hello(tmp_path):
+    runner = CliRunner()
+    out = tmp_path / "hello.bscope"
+    r = runner.invoke(main, ["hello", "--keep-session", str(out), "--json"])
+    assert r.exit_code == 0, r.output
+    assert "is_demo" in r.output
+    assert "events" in r.output
+    assert "top_categories" in r.output
+    r2 = runner.invoke(main, ["hello"])
+    assert r2.exit_code == 0, r2.output
+    assert "BotScope hello" in r2.output or "Events analyzed" in r2.output
+
+
+def test_cli_access():
+    runner = CliRunner()
+    r = runner.invoke(main, ["access"])
+    assert r.exit_code == 0, r.output
+    assert "ease of access" in r.output.lower() or "checklist" in r.output.lower()
+    assert "botscope hello" in r.output
+    r2 = runner.invoke(main, ["access", "--json"])
+    assert r2.exit_code == 0, r2.output
+    assert "checklist" in r2.output
 
 
 def test_cli_batch(tmp_path):

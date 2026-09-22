@@ -24,6 +24,34 @@ BotScope is an **Internet-wide bot traffic census**: the Global Observatory fede
 
 ---
 
+## Try in 60 seconds
+
+No GUI, no network, no API keys — just a labeled offline demo:
+
+```bash
+pip install botscope
+botscope hello
+```
+
+Optional: save a session or emit JSON:
+
+```bash
+botscope hello --keep-session hello.bscope
+botscope hello --json
+```
+
+Then explore the checklist and desktop app:
+
+```bash
+botscope access
+pip install "botscope[gui]"   # if you want the Observatory
+botscope gui
+```
+
+First-hour guide: [`docs/guides/EASE_OF_ACCESS.md`](docs/guides/EASE_OF_ACCESS.md).
+
+---
+
 ## Screenshots
 
 <p align="center">
@@ -131,6 +159,7 @@ Environment check and synthetic demo:
 
 ```bash
 botscope doctor
+botscope hello
 botscope demo --output demo_analysis.bscope
 botscope open demo_analysis.bscope
 ```
@@ -161,7 +190,7 @@ print(result.automation_fraction)
 print(result.stats.by_category)
 ```
 
-More detail: [`docs/guides/QUICKSTART.md`](docs/guides/QUICKSTART.md) Â· [`docs/guides/INSTALLATION.md`](docs/guides/INSTALLATION.md)
+More detail: [`docs/guides/EASE_OF_ACCESS.md`](docs/guides/EASE_OF_ACCESS.md) · [`docs/guides/QUICKSTART.md`](docs/guides/QUICKSTART.md) · [`docs/guides/INSTALLATION.md`](docs/guides/INSTALLATION.md)
 
 ---
 
@@ -171,6 +200,8 @@ More detail: [`docs/guides/QUICKSTART.md`](docs/guides/QUICKSTART.md) Â· [`doc
 
 | Command | Purpose |
 |---------|---------|
+| `hello` | Offline first-run demo summary (no GUI/network/API keys) |
+| `access` | Ease-of-access checklist (install, data dirs, privacy) |
 | `doctor` | Environment / policy diagnostics |
 | `demo` | Analyze bundled synthetic corpus (always labeled DEMO) |
 | `analyze` | Analyze an authorized log or PCAP |

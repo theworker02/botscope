@@ -2,6 +2,16 @@
 
 All notable changes to BotScope are documented here. Only features that exist in the repository are listed.
 
+## [Unreleased]
+
+### Added
+
+- **`botscope hello`** — offline first-run demo analysis with friendly summary (`--json`, `--keep-session PATH`); no GUI, network, or API keys required
+- **`botscope access`** — ease-of-access checklist (install paths, zero-config claims, data locations, GUI, network-off guidance, doctor)
+- Richer **`botscope quickstart`** covering install, hello, demo, analyze, GUI, doctor, Global Observatory, and privacy defaults
+- **`botscope.onboarding`** helpers module (testable summary / checklist builders)
+- Docs: expanded `ACQUISITION.md`, `docs/guides/EASE_OF_ACCESS.md`, FEATURES/README updates for hello/access
+
 ## [2.0.0] — 2026-09-18
 
 Major release: measurement workstation, Global Observatory estimates, bundled ML, and live multi-sensor capture.
