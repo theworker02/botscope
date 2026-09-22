@@ -2,13 +2,14 @@
 
 BotScope documentation mirrors repository reality. Status labels you may see: **IMPLEMENTED**, **PARTIAL**, **EXPERIMENTAL**, **PLANNED**, **RESEARCH**, **NOT IMPLEMENTED**.
 
-Start here if you are new: [guides/QUICKSTART.md](guides/QUICKSTART.md).
+Start here if you are new: [guides/EASE_OF_ACCESS.md](guides/EASE_OF_ACCESS.md) or [guides/QUICKSTART.md](guides/QUICKSTART.md).
 
 ## Guides
 
 | Doc | Description |
 |-----|-------------|
-| [guides/QUICKSTART.md](guides/QUICKSTART.md) | Install → doctor → demo → first analysis |
+| [guides/EASE_OF_ACCESS.md](guides/EASE_OF_ACCESS.md) | First-hour path: hello, access, data locations, privacy |
+| [guides/QUICKSTART.md](guides/QUICKSTART.md) | Install → doctor → hello/demo → first analysis |
 | [guides/INSTALLATION.md](guides/INSTALLATION.md) | Extras, venv, verification |
 | [guides/FAQ.md](guides/FAQ.md) | Common questions |
 | [guides/TROUBLESHOOTING.md](guides/TROUBLESHOOTING.md) | Failure modes and fixes |
@@ -71,6 +72,7 @@ Internal phase notes and checklists live under [development/](development/). Pre
 
 - [../README.md](../README.md) — project overview  
 - [../FEATURES.md](../FEATURES.md) — feature matrix  
+- [../ACQUISITION.md](../ACQUISITION.md) — acquisition briefing  
 - [../CHANGELOG.md](../CHANGELOG.md) — releases  
 - [../CONTRIBUTING.md](../CONTRIBUTING.md) — contribution guidelines  
 - [../SECURITY.md](../SECURITY.md) — vulnerability reporting  

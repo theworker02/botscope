@@ -17,16 +17,17 @@ pip install -e ".[gui,dev]"
 
 See [INSTALLATION.md](INSTALLATION.md) for optional extras (`capture`, `network`, `ml`, `analytics`, `all`).
 
-## 2. Doctor + demo
+## 2. Doctor + hello + demo
 
 ```bash
 botscope doctor
+botscope hello
 botscope demo --output demo_analysis.bscope
 botscope open demo_analysis.bscope
 botscope report demo_analysis.bscope --format markdown --output report.md
 ```
 
-The demo corpus is always labeled **DEMO**. Treat its shares as synthetic, not Internet-wide statistics.
+The demo corpus is always labeled **DEMO**. Treat its shares as synthetic, not Internet-wide statistics. Ease-of-access checklist: `botscope access`. First-hour guide: [EASE_OF_ACCESS.md](EASE_OF_ACCESS.md).
 
 ## 3. Desktop Observatory
 

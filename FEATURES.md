@@ -14,7 +14,7 @@ Labels reflect repository reality for BotScope **v2.0.0**.
 | Privacy transforms | IMPLEMENTED | `botscope.privacy` | |
 | Network client (OFF default) | IMPLEMENTED | `botscope.network` | |
 | Signatures packs | IMPLEMENTED | `botscope.signatures` | |
-| CLI | IMPLEMENTED | `botscope.cli` | live/capture/flows/geo/eval/federation/… |
+| CLI | IMPLEMENTED | `botscope.cli` | live/capture/flows/geo/eval/federation/hello/access/… |
 | Desktop Observatory GUI | IMPLEMENTED | `botscope.gui` | Native Qt/PySide6 (not a website) |
 | Global Observatory | IMPLEMENTED | `botscope.sources`, `gui.global_observatory` | Zero-auth federation; Radar OPTIONAL_AUTH |
 | Internet estimate headline | IMPLEMENTED | `botscope.estimation.internet` | Opens with ≥2 weighted traffic shares + uncertainty |
@@ -35,6 +35,8 @@ Labels reflect repository reality for BotScope **v2.0.0**.
 | ASN offline table | IMPLEMENTED | `botscope.asn` | Optional local CSV/JSON |
 | Enrich composer | IMPLEMENTED | `botscope.enrich` | ASN/geo/static + optional rDNS |
 | Demo corpus | IMPLEMENTED | `botscope.demo` | Synthetic |
+| First-run hello | IMPLEMENTED | `botscope.onboarding`, `cli` | `botscope hello` — offline demo summary; `--json` / `--keep-session` |
+| Ease-of-access checklist | IMPLEMENTED | `botscope.onboarding`, `cli` | `botscope access` + richer `botscope quickstart` |
 | Labeled eval fixtures | IMPLEMENTED | `datasets/fixtures` | Mini labeled JSONL |
 | Provenance inspector | IMPLEMENTED | `botscope.provenance` | |
 | Quality scorecard | IMPLEMENTED | `botscope.quality` | |

@@ -9,6 +9,7 @@ git clone https://github.com/theworker02/botscope.git && cd botscope
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e '.[dev]'
 botscope doctor
+botscope hello
 botscope demo
 pytest -q
 ```
