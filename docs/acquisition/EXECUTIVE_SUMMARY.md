@@ -1,51 +1,27 @@
-# Executive Summary — BotScope
+# Executive summary â€” BotScope
 
-**Date:** 2026-09-21  
-**Current license:** botscope Source-Available Evaluation License (proprietary source-available)  
-**Prior license (historical distributions):** Apache License, Version 2.0 (Apache-2.0)  
-**Transition marker:** 48437fe / merge da22ed8 (2026-09-20)
+## One paragraph
 
-## What this is
+This project is **proprietary**. Production use, redistribution, and commercial deployment require a written commercial license or completed acquisition. See [LICENSE](./LICENSE) and [ACQUISITION.md](./ACQUISITION.md). Contact [@theworker02](https://github.com/theworker02). <img src="docs/assets/botscope-logo.svg" alt="BotScope" width="480"/> **Python-first observability for an Internet-wide census of automated traffic.**
 
-Internet-wide bot traffic census / local analyzer: federates public crawler IP panels and optional CDN estimates; local log/session analysis and Qt Observatory.
+## Strategic read
 
-## Problem addressed
+BotScope is proprietary Product IP associated with `theworker02/botscope`. Acquisition value is the working materials, documentation, and a clear path to either a commercial license or an asset purchase â€” not an open-source community project.
 
-Operators lack a transparent, evidence-gated picture of automation traffic vs human traffic.
+## Maturity (honest)
 
-## Maturity
+| Claim | Posture |
+|-------|---------|
+| Production customers / ARR | Not claimed here â€” verify separately |
+| Filed patents | Not claimed â€” confirm in diligence |
+| Completeness vs README | README + tests are authoritative |
+| License | Proprietary; sale/license required |
 
-v2.0.0 on PyPI; short git history (≈9 commits). Single human maintainer + Dependabot.
+## Buyer next step
 
-## Deployment model
+1. NDA if private materials are needed  
+2. Run `BUYER_EVALUATION.md`  
+3. Review transfer schedules  
+4. Term sheet / definitive docs with counsel  
 
-pip install; CLI `botscope`; optional GUI; optional Cloudflare Radar token.
-
-## Language / stack
-
-Python >=3.10 (Hatchling); optional PySide6 GUI · Version metadata: **2.0.0**
-
-## Licensing posture (factual)
-
-- Current tree: proprietary / source-available terms in root `LICENSE` (see exact text).
-- Historical distributions under **Apache License, Version 2.0 (Apache-2.0)** remain governed by those terms for copies received, where applicable.
-- See [`LICENSE_TRANSITION_ANALYSIS.md`](./LICENSE_TRANSITION_ANALYSIS.md) and root `LICENSE_TRANSITION_NOTICE.md`.
-
-## Ownership (asserted, not adjudicated)
-
-Asserted holder: **theworker02 (https://github.com/theworker02)**.  
-LICENSE: theworker02. Historical Apache: 'BotScope Contributors'. pyproject authors still 'BotScope Contributors'. CITATION.cff previously stale Apache-2.0 (fixed in this program). No CLA/DCO.
-
-**REQUIRES_LEGAL_REVIEW** before treating ownership as adjudicated or exclusive.
-
-## What a buyer can expect
-
-- Ability to evaluate and (after commercial license / acquisition) operate the project with documented handoff materials in this data room.
-- Material third-party and historical-license limitations disclosed herein.
-- No fabricated users, revenue, benchmarks, or exclusivity claims in this data room.
-
-## Top diligence risks
-
-- Operator data redistribution rights for commercial sale
-- Apache→proprietary transition
-- Dataset fixture license clarity
+*Updated: 2026-09-22*

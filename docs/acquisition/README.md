@@ -1,40 +1,15 @@
-# Acquisition Data Room — BotScope
+# Acquisition data room â€” BotScope
 
-**Generated:** 2026-09-21  
-**Repository:** https://github.com/theworker02/botscope  
-**Asserted copyright holder (from notices):** theworker02 (https://github.com/theworker02)
+**Classification:** Confidential when private materials are shared under NDA.  
+**Public repo note:** These files are diligence aids; they do **not** grant commercial rights. See root `LICENSE` and `ACQUISITION.md`.
 
-This directory is a **technical and IP diligence data room**. It is factual,
-evidence-based, and intentionally discloses defects. It is **not legal advice**
-and does **not** assert that an acquisition has occurred.
+## How to navigate
 
-## Index
+1. `EXECUTIVE_SUMMARY.md` â€” thesis and maturity honesty  
+2. `TRANSFER_MANIFEST.md` + `ASSET_INVENTORY.md` â€” scope  
+3. `IP_PROVENANCE.md` + `DEPENDENCY_INVENTORY.md` â€” IP  
+4. `BUYER_EVALUATION.md` â€” prove it boots  
+5. `RISK_REGISTER.md` â€” known risks  
+6. `HANDOFF_CHECKLIST.md` â€” close / transition  
 
-| Document | Purpose |
-|----------|---------|
-| [EXECUTIVE_SUMMARY.md](./EXECUTIVE_SUMMARY.md) | Buyer-facing overview |
-| [ASSET_REGISTER.md](./ASSET_REGISTER.md) | What exists in the tree |
-| [ARCHITECTURE.md](./ARCHITECTURE.md) | Technical architecture pointer |
-| [IP_AUDIT.md](./IP_AUDIT.md) | Ownership / classification |
-| [DEPENDENCY_AUDIT.md](./DEPENDENCY_AUDIT.md) | Third-party code deps |
-| [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md) | Attribution obligations |
-| [LICENSE_HISTORY.md](./LICENSE_HISTORY.md) | Historical licensing |
-| [LICENSE_TRANSITION_ANALYSIS.md](./LICENSE_TRANSITION_ANALYSIS.md) | Relicense analysis |
-| [SECURITY_POSTURE.md](./SECURITY_POSTURE.md) | Security diligence |
-| [TEST_EVIDENCE.md](./TEST_EVIDENCE.md) | Tests actually run |
-| [BUILD_REPRODUCIBILITY.md](./BUILD_REPRODUCIBILITY.md) | Fresh-machine build |
-| [KNOWN_LIMITATIONS.md](./KNOWN_LIMITATIONS.md) | Honest limitations |
-| [TECHNICAL_DEBT.md](./TECHNICAL_DEBT.md) | Debt register |
-| [TRANSFER_PLAN.md](./TRANSFER_PLAN.md) | How to transfer |
-| [TRANSFER_MANIFEST.md](./TRANSFER_MANIFEST.md) | Transferability classes |
-| [CHANGE_OF_CONTROL_CHECKLIST.md](./CHANGE_OF_CONTROL_CHECKLIST.md) | Dormant post-close checklist |
-| [BUYER_DUE_DILIGENCE_CHECKLIST.md](./BUYER_DUE_DILIGENCE_CHECKLIST.md) | Buyer checklist |
-| [DISCLOSURE_SCHEDULE.md](./DISCLOSURE_SCHEDULE.md) | Material disclosures |
-| [BUYER_DEMO.md](./BUYER_DEMO.md) | Reproducible demo |
-| [HANDOFF_PLAN.md](./HANDOFF_PLAN.md) | Day 0 → Day 30 |
-| [READINESS_REPORT.md](./READINESS_REPORT.md) | Gate statuses |
-| [BOTSCOPE_DILIGENCE.md](./BOTSCOPE_DILIGENCE.md) | Project-specific diligence |
-
-Root commercial docs: [`COMMERCIAL.md`](../../COMMERCIAL.md) (if present), [`ACQUISITION.md`](../../ACQUISITION.md) (if present), [`LICENSE_TRANSITION_NOTICE.md`](../../LICENSE_TRANSITION_NOTICE.md).
-
-Legal templates: [`../legal/`](../legal/).
+Contact: [@theworker02](https://github.com/theworker02)

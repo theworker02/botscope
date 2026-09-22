@@ -1,108 +1,180 @@
-# Acquisition Brief — BotScope
+# Acquisition Brief â€” BotScope
 
-**Date:** 2026-09-21  
-**Status:** Briefing document only. **No acquisition has occurred** by virtue of this file.  
-**No valuation** is stated in this document.
+**Date:** 2026-09-22  
+**Repository:** https://github.com/theworker02/botscope  
+**Default branch:** `main`  
+**Primary language:** Python  
+**Status:** Diligence briefing only. **No acquisition has occurred** by virtue of this file.  
+**License:** Proprietary â€” sale, written commercial license, or completed asset transfer required (see root `LICENSE`).  
+**Valuation:** Not stated.  
+**Contact:** GitHub [@theworker02](https://github.com/theworker02) Â· [thanks.dev/u/gh/theworker02](https://thanks.dev/u/gh/theworker02)
 
-## Problem
+> Cloning or forking this repository does **not** grant production, redistribution, SaaS, OEM, or commercial rights.
 
-Operators and researchers lack a transparent, evidence-gated picture of automated Internet traffic versus human-likely traffic. Existing tools often force certainty, conflate a single site’s logs with “the Internet,” or require cloud accounts before a first measurement.
+---
 
-BotScope addresses this with:
+## 1. Executive thesis
 
-- An **Internet-wide census surface** (Global Observatory) that federates public crawler/IP panels and optional CDN estimates
-- A **local measurement workstation** (CLI + native Qt Observatory) for authorized logs, sessions, and live capture
-- An **UNKNOWN-first** classification posture with provenance badges (OBSERVED / CLASSIFIED / INFERRED)
+This project is **proprietary**. Production use, redistribution, and commercial deployment require a written commercial license or completed acquisition. See [LICENSE](./LICENSE) and [ACQUISITION.md](./ACQUISITION.md). Contact [@theworker02](https://github.com/theworker02). <img src="docs/assets/botscope-logo.svg" alt="BotScope" width="480"/> **Python-first observability for an Internet-wide census of automated traffic.**
 
-## Product surfaces
+**Why a buyer cares:** BotScope packages transferable product IP â€” source, docs, in-repo brand assets, and a diligence room under `docs/acquisition/` â€” under a clear proprietary posture so diligence can proceed without mistaking the repo for open source.
 
-| Surface | How to reach it | Notes |
-|---------|-----------------|-------|
-| CLI | `botscope <command>` | Headless analyze, hello, doctor, federation, … |
-| First-run | `botscope hello` | Offline demo end-to-end; no GUI/network/API keys |
-| Ease of access | `botscope access` / `botscope quickstart` | Install paths, data locations, privacy defaults |
-| Desktop Observatory | `botscope` or `botscope gui` | Native Qt / PySide6 — not a website |
-| Global Observatory | GUI **Global** page / `botscope federation` | Zero-auth public sources; Radar optional |
-| Python API | `from botscope import Analyzer` | Same pipeline as CLI |
-| PyPI package | `pip install botscope` / `botscope[gui]` | v2.0.0 |
+---
 
-Network contribution stays **OFF by default**. Zero-config for local logs: no account, no cloud profile, no API key.
+## 2. Product snapshot
 
-## What is included in a transaction (typical)
+| Item | Detail |
+|------|--------|
+| Product | BotScope |
+| Repo | `theworker02/botscope` |
+| Language | Python |
+| Open source? | **No** â€” proprietary |
+| Rightsholder | theworker02 |
+| Diligence pack | `docs/acquisition/` |
 
-- Git repository and original BotScope source/docs (subject to agreement)
-- Asserted copyright in original works (subject to counsel / chain of title)
-- Branding assets created for BotScope (registration status UNKNOWN)
-- Acquisition data room under `docs/acquisition/`
+### Capability highlights (from current materials)
 
-## What is NOT included
+- Build a **worldwide automation census** in Global Observatory from federated zero-auth public sources (crawler IP ranges, Common Crawl catalog, and similar) plus optional Cloudflare Radar CDN estimates
+- Classify requests from combined/common access logs (and optional PCAP / live paths)
+- Separate **OBSERVED** totals from **CLASSIFIED** shares, with provenance badges
+- Keep an honest **UNKNOWN** outcome instead of forcing certainty
+- Explore both **global census views** and local sessions in a **native desktop Observatory** (Qt / PySide6 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â not a website)
+- **Not** limited to a single site or sensor ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Global Observatory is the Internet-wide census surface
+- **Not** a claim that one local log alone equals the whole Internet (local shares stay labeled local; the census comes from federated global sources)
+- **Not** a cloud SaaS ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â analysis and preferences stay on your machine by default
+- **Not** a substitute for authorization: only analyze systems and traffic you own or have permission to measure
+- **Internet-wide census**: Global Observatory is the census product ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â federated public panels and optional CDN estimates.
+- **Local-first**: sessions and preferences stay on disk unless you explicitly enable network contribution.
+- **Provenance-aware**: OBSERVED counts are never relabeled as CLASSIFIED shares; local KPIs stay distinct from the global census.
 
-- Historical Apache-2.0 grants already received by third parties
-- Operator-published IP range data / Cloudflare Radar data
-- Third-party dependency source
-- Buyer cloud accounts or secrets
-- Fabricated user/revenue/census metrics (none claimed)
+---
 
-## Maturity
+## 3. Problem / opportunity
 
-v2.0.0 on PyPI; short git history. Single human maintainer + Dependabot. See `docs/acquisition/EXECUTIVE_SUMMARY.md`.
+Teams evaluating BotScope typically need either (a) a commercial right to run or embed it, or (b) outright ownership of the Product IP for strategic build-out. Public GitHub visibility without a proprietary license creates false assumptions about free production use. This brief and the linked data room make the commercial path explicit.
 
-## Technical differentiation
+---
 
-- Evidence-gated classification with UNKNOWN-first posture
-- Federated public panels for an Internet-wide census story (local KPIs stay dataset-scoped)
-- Offline-first first-run (`botscope hello`) and diagnostics (`botscope doctor`)
-- Optional local GUI Observatory and live capture extras
+## 4. What ships today
 
-## Transferable IP / third-party / limitations
+Honest maturity: treat repository contents, README claims, tests, and release tags as the source of truth. Do not assume production customers, ARR, filed patents, or SLAs unless separately evidenced in diligence.
 
-See:
+Typical transferable surfaces:
 
-- `docs/acquisition/IP_AUDIT.md`
-- `docs/acquisition/TRANSFER_MANIFEST.md`
-- `docs/acquisition/BOTSCOPE_DILIGENCE.md`
-- `docs/acquisition/DEPENDENCY_AUDIT.md`
+- Source tree and build/test scripts present in-repo
+- Documentation and design notes
+- Acquisition / diligence markdown under `docs/acquisition/`
+- Branding assets committed to the repository (if any)
 
-## Demo path (buyer / evaluator)
+---
 
-Fresh machine, no secrets required for the minimal path:
+## 5. Demo / evaluation path (buyer)
 
+Minimal path (no secrets required unless README says otherwise):
+
+```
 ```bash
 pip install botscope
-botscope doctor
 botscope hello
-botscope hello --keep-session demo.bscope
-botscope access
 ```
-
-With GUI extras:
-
 ```bash
-pip install 'botscope[gui]'
+botscope hello --keep-session hello.bscope
+botscope hello --json
+```
+```bash
+botscope access
+pip install "botscope[gui]"   # if you want the Observatory
 botscope gui
 ```
-
-From a clone (contributors / diligence):
-
 ```bash
-git clone https://github.com/theworker02/botscope.git && cd botscope
-python3 -m venv .venv && source .venv/bin/activate
-pip install -e '.[dev]'
+pip install "botscope[gui]"
+```
+```bash
+pip install botscope
+```
+```bash
+git clone https://github.com/theworker02/botscope.git
+cd botscope
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# macOS/Linux: source .venv/bin/activate
+pip install -e ".[gui,dev]"
+```
+```bash
+botscope doctor
 botscope hello
-pytest -q
+botscope demo --output demo_analysis.bscope
+botscope open demo_analysis.bscope
+```
+```bash
+botscope gui
+# or simply: botscope
+```
+```bash
+botscope analyze path/to/access.log --output analysis.bscope
+botscope report analysis.bscope --format markdown --output report.md
 ```
 
-Expected: commands exit 0; demo output is labeled **DEMO**; no fabricated Internet-wide rates. Detailed script: `docs/acquisition/BUYER_DEMO.md`. First-hour operator guide: `docs/guides/EASE_OF_ACCESS.md`.
+Extended evaluation: `docs/acquisition/BUYER_EVALUATION.md`. Written NDA / evaluation grants may be required for private materials.
 
-## Handoff / evaluation
+---
 
-- `docs/acquisition/HANDOFF_PLAN.md`
-- `docs/acquisition/BUYER_DEMO.md`
-- `docs/acquisition/BUYER_DUE_DILIGENCE_CHECKLIST.md`
-- `docs/acquisition/CHANGE_OF_CONTROL_CHECKLIST.md`
+## 6. What a transaction typically includes
 
-## Acquisition contact
+Subject to definitive schedules:
 
-GitHub [@theworker02](https://github.com/theworker02) · https://github.com/theworker02/botscope
+| Included (typical) | Excluded (typical) |
+|--------------------|--------------------|
+| Repo materials + asserted original IP | Seller personal accounts / unrelated repos |
+| Docs + diligence room at closing | Third-party dependency source under separate licenses |
+| In-repo brand marks as assigned | Secrets without rotation plan |
+| Know-how captured in docs | Fabricated revenue, user, or adoption metrics |
 
-Commercial / license questions: see root `COMMERCIAL.md` and `SUPPORT.md`.
+---
+
+## 7. Suggested deal structures
+
+| Structure | When it fits |
+|-----------|--------------|
+| Non-exclusive commercial license | Deploy/run under seat or environment terms |
+| Exclusive field-of-use license | Buyer wants exclusivity; seller may retain entity |
+| Asset / IP assignment | Buyer wants ownership of Materials outright |
+| OEM / redistribution | Separate agreement â€” not implied here |
+
+Commercial terms (price, earnouts, escrow) are negotiated under NDA with counsel.
+
+---
+
+## 8. Buyer diligence checklist
+
+- [ ] Confirm Rightsholder identity and authority to sell/license
+- [ ] Inventory Materials (`docs/acquisition/ASSET_INVENTORY.md`)
+- [ ] Review IP posture (`IP_PROVENANCE.md`) and dependencies (`DEPENDENCY_INVENTORY.md`)
+- [ ] Run evaluation script (`BUYER_EVALUATION.md`)
+- [ ] Review risks (`RISK_REGISTER.md`)
+- [ ] Agree transfer scope (`TRANSFER_MANIFEST.md`) and handoff (`HANDOFF_CHECKLIST.md`)
+- [ ] Supersede root `LICENSE` at closing via definitive agreement
+
+---
+
+## 9. Related documents
+
+| Document | Purpose |
+|----------|---------|
+| `LICENSE` | Proprietary â€” no default grant |
+| `docs/acquisition/README.md` | Data-room index |
+| `docs/acquisition/EXECUTIVE_SUMMARY.md` | One-page thesis |
+| `README.md` | Product overview |
+| `SECURITY.md` | Vulnerability reporting |
+| `COMMERCIAL.md` | Licensing contact path |
+| `.github/FUNDING.yml` | Sponsors / thanks.dev |
+
+---
+
+## 10. Disclaimer
+
+This package is informational and **does not** create a binding offer, grant of rights, or investment advice. Engage counsel for any transaction.
+
+---
+
+*Document version: 2.0.0 / 2026-09-22 Â· Classification: acquisition briefing*
